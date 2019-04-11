@@ -17,21 +17,32 @@ MISSPELL_FILENAME = DATA_DIR+"misspell.txt"
 dictionary = []
 with open(DICT_FILENAME, 'r') as fp:
     for line in fp:
-        dictionary.append(line)
-# save dictionary list to .json file
+        dictionary.append(line.rstrip('\n'))
 
+# save dictionary list to .json file
+print("Saving dictionary as .json...")
+with open(OUTPUT_DIR + "dict.json", 'w') as fp:
+    json.dump(dictionary, fp, indent=4)
+print("Dictionary saved to ", OUTPUT_DIR + "dict.json")
 
 data_entries = []
 mis = open(MISSPELL_FILENAME, 'r').readlines()
 correct = open(CORRECT_FILENAME, 'r').readlines()
 
 for i in range(len(mis)):
-    if correct[i] in dictionary:
-        entry = [mis[i], correct[i], 'IV']
+    if correct[i].rstrip('\n') in dictionary:
+        entry = [mis[i].rstrip('\n'), correct[i].rstrip('\n'), 'IV']
     else:
-        entry = [mis[i], correct[i], 'OOV']
+        entry = [mis[i].rstrip('\n'), correct[i].rstrip('\n'), 'OOV']
+    if mis[i].rstrip('\n') == correct[i].rstrip('\n'):
+        entry.append(True) # Means the misspell and the corrected one is actually the same
+    else:
+        entry.append(False)# Means the misspell and the corrected one is not the same
     data_entries.append(entry)
-
+print("Saving misspelling-correct spelling data entries...")
+with open(OUTPUT_DIR + "data_entries.json", 'w') as fp:
+    json.dump(data_entries, fp, indent=4)
+print("Data entries saved to ", OUTPUT_DIR + "data_entries.json")
 iv = 0
 for c in data_entries:
     if c[2] is 'IV':
