@@ -1,8 +1,13 @@
 import json
 import os
-
+import multiprocessing as mp
 import utilsKTP1 as KTP1
-from p_tqdm import p_map
+import time
+import datetime
+
+"""
+Approximate String Matching with String Distance Metrics
+"""
 
 ON_SERVER = True
 if ON_SERVER:
@@ -30,22 +35,16 @@ def findMatchForASingleEntry(data_entry):
     else:
         result["original spelling status"] = "misspell"
     edit_distance = float("inf")
-    jaccard_distance = float("inf")
     two_gram_distance = float("inf")
     three_gram_distance = float("inf")
     for word in dict:
         edit_distance_word = KTP1.calculateStringDistance.editDistance(data_entry[0], word)
-        j_distance_word = KTP1.calculateStringDistance.jaccardDistance(data_entry[0], word)
         two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 2)
         three_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 3)
         # compare for Levenshtein
         if edit_distance_word < edit_distance:
             result["Levenshtein"] = word
             edit_distance = edit_distance_word
-        # compare for jaccard
-        if j_distance_word < jaccard_distance:
-            result["Jaccard Distance"] = word
-            jaccard_distance = j_distance_word
         # compare for 3-gram with jaccard
         if three_gram_distance_word < three_gram_distance:
             result["3-Gram with Jaccard"] = word
@@ -54,11 +53,27 @@ def findMatchForASingleEntry(data_entry):
         if two_gram_distance_word < two_gram_distance:
             result["2-Gram with Jaccard"] = word
             two_gram_distance = two_gram_distance_word
+    # print("Match for %s found"%data_entry[0])
     return result
 
 
 if __name__ == '__main__':
-    res = p_map(findMatchForASingleEntry, iv_data)
+    pool = mp.Pool()
+    res = []
+    start_time = time.time()
+    # res = pool.map(findMatchForASingleEntry, iv_data)
+    cnt = 0
+    for y in pool.imap_unordered(findMatchForASingleEntry, iv_data):
+        now = time.time()
+        passed_time = now - start_time
+        print(y)
+        res.append(y)
+        cnt += 1
+        itr_time = passed_time / cnt
+        est_remain_time = str(datetime.timedelta(seconds=len(iv_data) * itr_time))
+        print('Progress %d/%d; Single Match Time %d seconds; Estimate Time Remaining: %s\r' % (cnt, len(iv_data),
+                                                                                               itr_time,
+                                                                                               est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
         json.dump(res, fp)

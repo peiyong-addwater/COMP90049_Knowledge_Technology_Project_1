@@ -8,7 +8,7 @@
 
 ## Part Two: Lexical Normalization on the IV Part of the Dataset
 
-- Basic edit distance (<=2)
+- Basic edit distance (return the one with the minimum edit distance)
 - Character level Jaccard Distance
 - Character level n-gram (maybe n = 3)
 - Soundex matching (soundex, metaphone(with character matching such as Jaccard), refined soundex, fuzzy soundex, match rating approach)
