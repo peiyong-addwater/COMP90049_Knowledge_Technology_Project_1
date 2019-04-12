@@ -58,5 +58,5 @@ for misspell in iv_bar:
     print(result)
 
 print("Saving results...")
-with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
+with open(OUTPUT_DIR + "string_distance_matching_result.json", 'r') as fp:
     json.dump(distance_matching_result, fp)
