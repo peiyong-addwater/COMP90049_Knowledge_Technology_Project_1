@@ -2,7 +2,7 @@ import os
 import json
 from tqdm import tqdm
 import utilsKTP1 as KTP1
-
+import numba as nb
 
 
 ON_SERVER = True
@@ -21,41 +21,48 @@ with open(DICT, 'r') as fp:
 iv_data = [c for c in data if c[2] == "IV"]
 iv_bar = tqdm(iv_data)
 distance_matching_result = {}
-for misspell in iv_bar:
-    result = {}
-    if misspell[-1] == True:
-        result["original spelling status"] = "correct"
-    else:
-        result["original spelling status"] = "misspell"
-    result["target"] = misspell[1]
-    edit_distance = float("inf")
-    jaccard_distance = float("inf")
-    two_gram_distance = float("inf")
-    three_gram_distance = float("inf")
-    iv_bar.set_description("Finding match (with string distance metrics) for %s" % misspell[0])
-    for word in dict:
-        edit_distance_word = KTP1.calculateStringDistance.editDistance(misspell[0], word)
-        j_distance_word = KTP1.calculateStringDistance.jaccardDistance(misspell[0], word)
-        two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, 2)
-        three_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, 3)
-        # compare for Levenshtein
-        if edit_distance_word < edit_distance:
-            result["Levenshtein"] = word
-            edit_distance = edit_distance_word
-        # compare for jaccard
-        if j_distance_word < jaccard_distance:
-            result["Jaccard Distance"] = word
-            jaccard_distance = j_distance_word
-        # compare for 3-gram with jaccard
-        if three_gram_distance_word < three_gram_distance:
-            result["3-Gram with Jaccard"] = word
-            three_gram_distance = three_gram_distance_word
-        # compare for 2-gram with jaccard
-        if two_gram_distance_word < two_gram_distance:
-            result["2-Gram with Jaccard"] = word
-            two_gram_distance = two_gram_distance_word
-    distance_matching_result[misspell[0]] = result
 
-print("Saving results...")
-with open(OUTPUT_DIR + "string_distance_matching_result.json", 'r') as fp:
-    json.dump(distance_matching_result, fp)
+
+@nb.jit(nopython=True)
+def getResults():
+    for misspell in iv_bar:
+        result = {}
+        if misspell[-1] == True:
+            result["original spelling status"] = "correct"
+        else:
+            result["original spelling status"] = "misspell"
+        result["target"] = misspell[1]
+        edit_distance = float("inf")
+        jaccard_distance = float("inf")
+        two_gram_distance = float("inf")
+        three_gram_distance = float("inf")
+        iv_bar.set_description("Finding match (with string distance metrics) for %s" % misspell[0])
+        for word in dict:
+            edit_distance_word = KTP1.calculateStringDistance.editDistance(misspell[0], word)
+            j_distance_word = KTP1.calculateStringDistance.jaccardDistance(misspell[0], word)
+            two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, 2)
+            three_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, 3)
+            # compare for Levenshtein
+            if edit_distance_word < edit_distance:
+                result["Levenshtein"] = word
+                edit_distance = edit_distance_word
+            # compare for jaccard
+            if j_distance_word < jaccard_distance:
+                result["Jaccard Distance"] = word
+                jaccard_distance = j_distance_word
+            # compare for 3-gram with jaccard
+            if three_gram_distance_word < three_gram_distance:
+                result["3-Gram with Jaccard"] = word
+                three_gram_distance = three_gram_distance_word
+            # compare for 2-gram with jaccard
+            if two_gram_distance_word < two_gram_distance:
+                result["2-Gram with Jaccard"] = word
+                two_gram_distance = two_gram_distance_word
+        distance_matching_result[misspell[0]] = result
+
+    print("Saving results...")
+    with open(OUTPUT_DIR + "string_distance_matching_result.json", 'r') as fp:
+        json.dump(distance_matching_result, fp)
+
+
+getResults()
