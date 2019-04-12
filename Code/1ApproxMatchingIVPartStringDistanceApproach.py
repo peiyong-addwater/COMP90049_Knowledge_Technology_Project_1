@@ -64,6 +64,18 @@ def multicore():
     return res
 
 
+if __name__ == '__main__':
+    res = multicore()
+    print("Saving results...")
+    with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
+        json.dump(res, fp)
+
+
+
+
+
+
+
 '''
 def getResults(iv):
     distance_matching_result = {}
@@ -104,8 +116,3 @@ def getResults(iv):
         print(result)
     return distance_matching_result
 '''
-if __name__ == '__main__':
-    res = multicore()
-    print("Saving results...")
-    with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
-        json.dump(res, fp)
