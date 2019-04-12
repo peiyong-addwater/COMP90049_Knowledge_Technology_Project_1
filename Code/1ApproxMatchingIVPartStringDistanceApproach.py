@@ -55,7 +55,6 @@ for misspell in iv_bar:
             result["2-Gram with Jaccard"] = word
             two_gram_distance = two_gram_distance_word
     distance_matching_result[misspell[0]] = result
-    print(result)
 
 print("Saving results...")
 with open(OUTPUT_DIR + "string_distance_matching_result.json", 'r') as fp:
