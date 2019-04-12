@@ -1,6 +1,5 @@
 import os
 import json
-import nltk
 
 CWD = os.getcwd()
 # Should be .../COMP90049_Knowledge_Technology_Project_1 if run "python .../Code/0DataPreprocess.py" in terminal
@@ -51,5 +50,3 @@ oov = len(mis)-iv
 total = len(data_entries)
 print("IV: ", iv, "/", total, '\t', "IV Ratio: ", iv/total) 
 print("OOV: ",  oov, "/", total, '\t', "OOV Ratio: ", oov/total)
-
-
