@@ -1,6 +1,5 @@
 import os
 import json
-from tqdm import tqdm
 import utilsKTP1 as KTP1
 import multiprocessing as mp
 
