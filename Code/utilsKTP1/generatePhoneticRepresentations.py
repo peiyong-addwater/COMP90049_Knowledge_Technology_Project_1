@@ -1,6 +1,7 @@
 import pyphonetics
 
 from .exceptions import PhoneticAlgorithmError, UnicodeException
+from .calculateStringDistance import jaccardDistance, jaccardDistanceNGram, editDistance
 
 rs = pyphonetics.RefinedSoundex()
 metaphone = pyphonetics.Metaphone()
