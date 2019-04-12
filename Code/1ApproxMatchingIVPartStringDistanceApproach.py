@@ -32,7 +32,7 @@ for misspell in iv_bar:
     jaccard_distance = float("inf")
     two_gram_distance = float("inf")
     three_gram_distance = float("inf")
-    iv_bar.set_description("Finding match for %s" % misspell[0])
+    iv_bar.set_description("Finding match (with string distance metrics) for %s" % misspell[0])
     for word in dict:
         edit_distance_word = KTP1.calculateStringDistance.editDistance(misspell[0], word)
         j_distance_word = KTP1.calculateStringDistance.jaccardDistance(misspell[0], word)
