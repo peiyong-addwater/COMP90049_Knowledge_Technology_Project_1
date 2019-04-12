@@ -1,5 +1,6 @@
-import os
 import json
+import os
+
 import utilsKTP1 as KTP1
 from p_tqdm import p_map
 
@@ -61,10 +62,3 @@ if __name__ == '__main__':
     print("Saving results...")
     with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
         json.dump(res, fp)
-
-
-
-
-
-
-
