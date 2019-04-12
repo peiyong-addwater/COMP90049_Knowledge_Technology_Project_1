@@ -13,6 +13,6 @@ def jaccardDistance(word1, word2):
 
 # Jaccard distance with n-gram
 def jaccardDistanceNGram(word1, word2, n=3):
-    w1_chars = nltk.ngrams(word1, n)
-    w2_chars = nltk.ngrams(word2, n)
+    w1_chars = nltk.ngrams(word1, n, pad_left=True, pad_right=True, left_pad_symbol=' ', right_pad_symbol=' ')
+    w2_chars = nltk.ngrams(word2, n, pad_left=True, pad_right=True, left_pad_symbol=' ', right_pad_symbol=' ')
     return nltk.jaccard_distance(set(w1_chars), set(w2_chars))
