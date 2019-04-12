@@ -1,8 +1,9 @@
 import os
 import json
-
+ON_SERVER = True
+if ON_SERVER:
+    os.chdir("/home/peiyongw/Research/KT_Project1/COMP90049_Knowledge_Technology_Project_1")
 CWD = os.getcwd()
-# Should be .../COMP90049_Knowledge_Technology_Project_1 if run "python .../Code/0DataPreprocess.py" in terminal
 print("Current working directory: ", CWD)
 OUTPUT_DIR = CWD + "/Code_Output/"
 """
@@ -48,5 +49,5 @@ for c in data_entries:
         iv = iv + 1
 oov = len(mis)-iv
 total = len(data_entries)
-print("IV: ", iv, "/", total, '\t', "IV Ratio: ", iv/total) 
+print("IV: ", iv, "/", total, '\t', "IV Ratio: ", iv/total)
 print("OOV: ",  oov, "/", total, '\t', "OOV Ratio: ", oov/total)
