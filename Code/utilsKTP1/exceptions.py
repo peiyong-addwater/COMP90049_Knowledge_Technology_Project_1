@@ -1,0 +1,2 @@
+class PhoneticAlgorithmError(Exception):
+    pass
