@@ -39,21 +39,45 @@ def findMatchForASingleEntry(data_entry):
     two_gram_distance = float("inf")
     three_gram_distance = float("inf")
     for word in dict:
+        edit_2 = []  # words with maximum 2 edits
+        edit_1 = []  # words with maximum 1 edits
+        jaccard3_20 = []  # 3 gram with jaccard distance no greater than 0.20
+        jaccard3_10 = []  # 3 gram with jaccard distance no greater than 0.10
+        jaccard2_20 = []  # 2 gram with jaccard distance no greater than 0.20
+        jaccard2_10 = []  # 2 gram with jaccard distance no greater than 0.10
         edit_distance_word = KTP1.calculateStringDistance.editDistance(data_entry[0], word)
         two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 2)
         three_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 3)
         # compare for Levenshtein
         if edit_distance_word < edit_distance:
-            result["Levenshtein"] = word
+            result["Minimum Levenshtein Distance"] = word
             edit_distance = edit_distance_word
+        if edit_distance_word <= 2:
+            edit_2.append(word)
+        if edit_distance_word <= 1:
+            edit_1.append(word)
         # compare for 3-gram with jaccard
         if three_gram_distance_word < three_gram_distance:
-            result["3-Gram with Jaccard"] = word
+            result["3-Gram with Jaccard Best Match"] = word
             three_gram_distance = three_gram_distance_word
+        if three_gram_distance_word <= 0.2:
+            jaccard3_20.append(word)
+        if three_gram_distance_word <= 0.1:
+            jaccard3_10.append(word)
         # compare for 2-gram with jaccard
         if two_gram_distance_word < two_gram_distance:
-            result["2-Gram with Jaccard"] = word
+            result["2-Gram with Jaccard Best Match"] = word
             two_gram_distance = two_gram_distance_word
+        if two_gram_distance_word <= 0.2:
+            jaccard2_20.append(word)
+        if two_gram_distance_word <= 0.1:
+            jaccard2_10.append(word)
+        result["Edit Distance No More Than 2"] = edit_2
+        result["Edit Distance No More Than 1"] = edit_1
+        result["3-Gram Jaccard Distance No More Than 0.2"] = jaccard3_20
+        result["3-Gram Jaccard Distance No More Than 0.1"] = jaccard3_10
+        result["2-Gram Jaccard Distance No More Than 0.2"] = jaccard2_20
+        result["2-Gram Jaccard Distance No More Than 0.1"] = jaccard2_10
     # print("Match for %s found"%data_entry[0])
     return result
 
@@ -67,7 +91,7 @@ if __name__ == '__main__':
     for y in pool.imap_unordered(findMatchForASingleEntry, iv_data):
         now = time.time()
         passed_time = now - start_time
-        print(y)
+        # print(y)
         res.append(y)
         cnt += 1
         itr_time = passed_time / cnt
@@ -78,4 +102,4 @@ if __name__ == '__main__':
                                                                                                         est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
-        json.dump(res, fp)
+        json.dump(res, fp, indent=4)
