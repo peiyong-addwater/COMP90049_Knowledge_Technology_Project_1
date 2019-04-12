@@ -3,7 +3,7 @@ import json
 from tqdm import tqdm
 import utilsKTP1 as KTP1
 
-N_GRAM = 2
+
 
 ON_SERVER = True
 if ON_SERVER:
@@ -30,22 +30,32 @@ for misspell in iv_bar:
     result["target"] = misspell[1]
     edit_distance = float("inf")
     jaccard_distance = float("inf")
-    ngram_distance = float("inf")
+    two_gram_distance = float("inf")
+    three_gram_distance = float("inf")
     iv_bar.set_description("Finding match for %s" % misspell[0])
     for word in dict:
         edit_distance_word = KTP1.calculateStringDistance.editDistance(misspell[0], word)
         j_distance_word = KTP1.calculateStringDistance.jaccardDistance(misspell[0], word)
-        ngram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, N_GRAM)
+        two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, 2)
+        three_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(misspell[0], word, 3)
+        # compare for Levenshtein
         if edit_distance_word < edit_distance:
             result["Levenshtein"] = word
             edit_distance = edit_distance_word
+        # compare for jaccard
         if j_distance_word < jaccard_distance:
             result["Jaccard Distance"] = word
             jaccard_distance = j_distance_word
-        if ngram_distance_word < ngram_distance:
-            result["N-Gram with Jaccard"] = word
-            ngram_distance = ngram_distance_word
+        # compare for 3-gram with jaccard
+        if three_gram_distance_word < three_gram_distance:
+            result["3-Gram with Jaccard"] = word
+            three_gram_distance = three_gram_distance_word
+        # compare for 2-gram with jaccard
+        if two_gram_distance_word < two_gram_distance:
+            result["2-Gram with Jaccard"] = word
+            two_gram_distance = two_gram_distance_word
     distance_matching_result[misspell[0]] = result
+    print(result)
 
 print("Saving results...")
 with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
