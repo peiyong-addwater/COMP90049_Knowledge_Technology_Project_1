@@ -55,6 +55,7 @@ def findMatchForASingleEntry(data_entry):
         if two_gram_distance_word < two_gram_distance:
             result["2-Gram with Jaccard"] = word
             two_gram_distance = two_gram_distance_word
+    return result
 
 
 def multicore():
