@@ -71,9 +71,10 @@ if __name__ == '__main__':
         cnt += 1
         itr_time = passed_time / cnt
         est_remain_time = str(datetime.timedelta(seconds=len(iv_data) * itr_time))
-        print('Progress %d/%d; Single Match Time %d seconds; Estimate Time Remaining: %s\r' % (cnt, len(iv_data),
-                                                                                               itr_time,
-                                                                                               est_remain_time))
+        print('Progress %d/%d; Average Single Match Time %d seconds; Estimate Time Remaining: %s.\r' % (cnt,
+                                                                                                        len(iv_data),
+                                                                                                        itr_time,
+                                                                                                        est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
         json.dump(res, fp)
