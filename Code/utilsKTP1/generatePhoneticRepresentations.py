@@ -1,6 +1,6 @@
 import pyphonetics
 
-from .exceptions import PhoneticAlgorithmError
+from .exceptions import PhoneticAlgorithmError, UnicodeException
 
 rs = pyphonetics.RefinedSoundex()
 metaphone = pyphonetics.Metaphone()
@@ -50,3 +50,7 @@ class PhoneticRepresentation:
             self.func = self.algorithm[self.func]
         else:
             raise PhoneticAlgorithmError('Invalid Phonetic Algorithm.')
+
+    def phonetics(self, wordString):
+        if not isinstance(wordString, str):
+            raise UnicodeException('Expected a unicode string!')
