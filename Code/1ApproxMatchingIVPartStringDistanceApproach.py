@@ -92,7 +92,7 @@ if __name__ == '__main__':
     for y in pool.imap_unordered(findMatchForASingleEntry, iv_data):
         now = time.time()
         passed_time = now - start_time
-        print(y)
+        # print(y)
         res.append(y)
         cnt += 1
         itr_time = passed_time / cnt
