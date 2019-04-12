@@ -2,7 +2,7 @@ import os
 import json
 from tqdm import tqdm
 import utilsKTP1 as KTP1
-
+import multiprocessing as mp
 
 ON_SERVER = True
 if ON_SERVER:
@@ -18,12 +18,56 @@ with open(DICT, 'r') as fp:
     dict = json.load(fp)
 
 iv_data = [c for c in data if c[2] == "IV"]
-iv_bar = tqdm(iv_data)
 distance_matching_result = {}
 
 
-def getResults():
-    for misspell in iv_bar:
+def findMatchForASingleEntry(data_entry):
+    result = {}
+    result["misspell"] = data_entry[0]
+    result["target"] = data_entry[1]
+    if data_entry[-1] == True:
+        result["original spelling status"] = "correct"
+    else:
+        result["original spelling status"] = "misspell"
+    edit_distance = float("inf")
+    jaccard_distance = float("inf")
+    two_gram_distance = float("inf")
+    three_gram_distance = float("inf")
+    print("finding match for: ", data_entry[0])
+    for word in dict:
+        print("Finding match for %s \n" % data_entry[0])
+        edit_distance_word = KTP1.calculateStringDistance.editDistance(data_entry[0], word)
+        j_distance_word = KTP1.calculateStringDistance.jaccardDistance(data_entry[0], word)
+        two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 2)
+        three_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 3)
+        # compare for Levenshtein
+        if edit_distance_word < edit_distance:
+            result["Levenshtein"] = word
+            edit_distance = edit_distance_word
+        # compare for jaccard
+        if j_distance_word < jaccard_distance:
+            result["Jaccard Distance"] = word
+            jaccard_distance = j_distance_word
+        # compare for 3-gram with jaccard
+        if three_gram_distance_word < three_gram_distance:
+            result["3-Gram with Jaccard"] = word
+            three_gram_distance = three_gram_distance_word
+        # compare for 2-gram with jaccard
+        if two_gram_distance_word < two_gram_distance:
+            result["2-Gram with Jaccard"] = word
+            two_gram_distance = two_gram_distance_word
+
+
+def multicore():
+    pool = mp.Pool()
+    res = pool.map(findMatchForASingleEntry, iv_data)
+    return res
+
+
+'''
+def getResults(iv):
+    distance_matching_result = {}
+    for misspell in iv:
         result = {}
         if misspell[-1] == True:
             result["original spelling status"] = "correct"
@@ -34,7 +78,7 @@ def getResults():
         jaccard_distance = float("inf")
         two_gram_distance = float("inf")
         three_gram_distance = float("inf")
-        iv_bar.set_description("Finding match (with string distance metrics) for %s" % misspell[0])
+        print("finding match for: ", misspell[0])
         for word in dict:
             edit_distance_word = KTP1.calculateStringDistance.editDistance(misspell[0], word)
             j_distance_word = KTP1.calculateStringDistance.jaccardDistance(misspell[0], word)
@@ -57,10 +101,11 @@ def getResults():
                 result["2-Gram with Jaccard"] = word
                 two_gram_distance = two_gram_distance_word
         distance_matching_result[misspell[0]] = result
-
+        print(result)
+    return distance_matching_result
+'''
+if __name__ == '__main__':
+    res = multicore()
     print("Saving results...")
-    with open(OUTPUT_DIR + "string_distance_matching_result.json", 'r') as fp:
-        json.dump(distance_matching_result, fp)
-
-
-getResults()
+    with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
+        json.dump(res, fp)
