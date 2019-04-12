@@ -1,9 +1,10 @@
-import json
-import os
-import multiprocessing as mp
-import utilsKTP1 as KTP1
-import time
 import datetime
+import json
+import multiprocessing as mp
+import os
+import time
+
+import utilsKTP1 as KTP1
 
 """
 Approximate String Matching with String Distance Metrics
