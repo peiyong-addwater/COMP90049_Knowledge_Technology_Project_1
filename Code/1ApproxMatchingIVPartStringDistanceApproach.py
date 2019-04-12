@@ -2,7 +2,6 @@ import os
 import json
 from tqdm import tqdm
 import utilsKTP1 as KTP1
-import numba
 
 
 ON_SERVER = True
@@ -23,7 +22,6 @@ iv_bar = tqdm(iv_data)
 distance_matching_result = {}
 
 
-@numba.jit()
 def getResults():
     for misspell in iv_bar:
         result = {}
