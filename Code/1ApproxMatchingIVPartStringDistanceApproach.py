@@ -92,15 +92,14 @@ if __name__ == '__main__':
     for y in pool.imap_unordered(findMatchForASingleEntry, iv_data):
         now = time.time()
         passed_time = now - start_time
+        p_t = str(datetime.timedelta(seconds=passed_time))
         # print(y)
         res.append(y)
         cnt += 1
-        itr_time = passed_time / cnt
-        est_remain_time = str(datetime.timedelta(seconds=len(iv_data) * itr_time))
-        print('Progress %d/%d; Average Single Match Time %d seconds; Estimate Time Remaining: %s.\r' % (cnt,
-                                                                                                        len(iv_data),
-                                                                                                        itr_time,
-                                                                                                        est_remain_time))
+        itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
+        est_remain_time = str(datetime.timedelta(seconds=(len(iv_data) - cnt) * itr_time))
+        print('Running Time: %s, Progress %d/%d; Average Single Match Time %s; Estimate Time Remaining: '
+              '%s.\r' % (p_t, cnt, len(iv_data), itr_time, est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "distance_matching_result.json", 'w') as fp:
         json.dump(res, fp, indent=4)
