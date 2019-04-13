@@ -8,6 +8,8 @@ import utilsKTP1 as KTP1
 
 """
 Approximate String Matching with String Distance Metrics
+Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) and 128 GiB memory
+Total time: 
 """
 
 ON_SERVER = True

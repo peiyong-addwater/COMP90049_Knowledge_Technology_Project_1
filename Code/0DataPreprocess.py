@@ -52,3 +52,7 @@ oov = len(mis) - iv
 total = len(data_entries)
 print("IV: ", iv, "/", total, '\t', "IV Ratio: ", iv / total)
 print("OOV: ", oov, "/", total, '\t', "OOV Ratio: ", oov / total)
+'''
+IV:  8543 / 10322 	 IV Ratio:  0.8276496802945166
+OOV:  1779 / 10322 	 OOV Ratio:  0.17235031970548342
+'''
