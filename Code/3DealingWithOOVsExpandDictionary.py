@@ -3,8 +3,13 @@ import json
 import multiprocessing as mp
 import os
 import time
-import tqdm
+from tqdm import tqdm
 import utilsKTP1 as KTP1
+
+"""
+Expanding the dictionary with words from https://github.com/first20hours/google-10000-english and
+https://github.com/dwyl/english-words
+"""
 
 ON_SERVER = True
 if ON_SERVER:
@@ -13,7 +18,9 @@ CWD = os.getcwd()
 print("Current working directory: ", CWD)
 DATA_DIR = CWD + "/Data/"
 DICT_FILENAME = DATA_DIR + "dict.txt"
-ADDITIONAL_DATA = DATA_DIR + 'words.txt'
+ADDITIONAL_DATA_1 = DATA_DIR + 'words.txt'
+ADDITIONAL_DATA_2 = DATA_DIR + 'google-10000-english.txt'
+ADDITIONAL_DATA_3 = DATA_DIR + 'google-10000-english-usa.txt'
 CORRECT_FILENAME = DATA_DIR + "correct.txt"
 MISSPELL_FILENAME = DATA_DIR + "misspell.txt"
 
@@ -22,9 +29,16 @@ DATA = OUTPUT_DIR + "data_entries.json"
 DICT = OUTPUT_DIR + "dict.json"
 
 additional_dict = []
-with open(ADDITIONAL_DATA, 'r') as fp:
+with open(ADDITIONAL_DATA_1, 'r') as fp:
     for line in fp:
         additional_dict.append(line.rstrip('\n'))
+with open(ADDITIONAL_DATA_2, 'r') as fp:
+    for line in fp:
+        additional_dict.append(line.rstrip('\n'))
+with open(ADDITIONAL_DATA_3, 'r') as fp:
+    for line in fp:
+        additional_dict.append(line.rstrip('\n'))
+
 with open(DICT, 'r') as fp:
     dict = json.load(fp)
 
@@ -39,8 +53,9 @@ print("Saving expanded dictionary as .json...")
 with open(OUTPUT_DIR + "new_dict.json", 'w') as fp:
     json.dump(new_dict, fp, indent=4)
 print("Expanded dictionary saved to ", OUTPUT_DIR + "new_dict.json")
-for i in range(len(mis)):
-    print("Progress %d/%d" % (i + 1, len(mis)))
+print("Processing data according to expanded dictionary...")
+for i in tqdm(range(len(mis))):
+    # print("Progress %d/%d\r" % (i + 1, len(mis)))
     if correct[i].rstrip('\n') in new_dict:
         entry = [mis[i].rstrip('\n'), correct[i].rstrip('\n'), 'IV']
     else:
