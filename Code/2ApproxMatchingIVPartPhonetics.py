@@ -2,7 +2,6 @@ import json
 import os
 
 import utilsKTP1 as KTP1
-import multiprocessing as mp
 
 ON_SERVER = True
 if ON_SERVER:
@@ -19,7 +18,10 @@ with open(DICT, 'r') as fp:
 
 iv_data = [c for c in data if c[2] == "IV"]
 phonetics_matching_result = {}
-
+soundexAlgorithms = ['metaphone', 'soundex', 'fuzzy', 'refined_soundex', 'mra']
+algoDict = {}
+for c in soundexAlgorithms:
+    algoDict[c] = KTP1.generatePhoneticRepresentations.PhoneticRepresentation(c)
 
 def findMatchForASingleEntry(data_entry):
     result = {}
@@ -29,3 +31,6 @@ def findMatchForASingleEntry(data_entry):
         result["original spelling status"] = "correct"
     else:
         result["original spelling status"] = "misspell"
+    best_distances = {}
+    for c in soundexAlgorithms:
+        best_distances[c] = float("inf")
