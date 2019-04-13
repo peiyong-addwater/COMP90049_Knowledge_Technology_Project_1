@@ -102,5 +102,5 @@ if __name__ == '__main__':
                                                                                                         itr_time,
                                                                                                         est_remain_time))
     print("Saving results...")
-    with open(OUTPUT_DIR + "distance_matching_result.json", 'r') as fp:
+    with open(OUTPUT_DIR + "distance_matching_result.json", 'w') as fp:
         json.dump(res, fp, indent=4)
