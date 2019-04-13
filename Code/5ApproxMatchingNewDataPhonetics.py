@@ -28,7 +28,6 @@ with open(DATA, 'r') as fp:
 with open(DICT, 'r') as fp:
     dict = json.load(fp)
 
-data = [c for c in data if c[2] == "IV"]
 phonetics_matching_result = {}
 soundexAlgorithmNames = ['metaphone', 'refined_soundex', 'mra']
 algoDict = {}
