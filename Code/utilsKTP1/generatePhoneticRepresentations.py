@@ -1,6 +1,5 @@
 import re
 
-import numba
 from num2words import num2words
 
 from .calculateStringDistance import jaccardDistance, jaccardDistanceNGram, editDistance
@@ -58,7 +57,6 @@ class PhoneticRepresentation:
         self.replacementDict = {'0': 'o', '1': 'one', '2': 'to', '3': 'three', '4': 'four', '5': "five", '6': "six",
                                 '7': 'seven', '8': 'eight', '9': 'nine', '10': 'ten'}
 
-    @numba.jit()
     def wordPreprocess(self, word):
         if not isinstance(word, str):
             raise UnicodeException('Expected a unicode string!')
