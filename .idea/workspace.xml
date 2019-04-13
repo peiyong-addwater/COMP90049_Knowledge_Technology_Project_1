@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py" afterDir="false" />
-    </list>
+    <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="883">
-              <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="859">
+              <caret line="105" column="36" lean-forward="true" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -288,28 +282,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555064640222</updated>
       <workItem from="1555064643241" duration="32833000" />
-      <workItem from="1555173184028" duration="5855000" />
-    </task>
-    <task id="LOCAL-00018" summary="updates">
-      <created>1555082580595</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1555082580595</updated>
-    </task>
-    <task id="LOCAL-00019" summary="updates">
-      <created>1555082708575</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1555082708575</updated>
-    </task>
-    <task id="LOCAL-00020" summary="updates">
-      <created>1555082817429</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1555082817429</updated>
+      <workItem from="1555173184028" duration="6069000" />
     </task>
     <task id="LOCAL-00021" summary="updates">
       <created>1555082879086</created>
@@ -633,22 +606,43 @@
       <option name="project" value="LOCAL" />
       <updated>1555181430506</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="updates">
+      <created>1555181584310</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1555181584310</updated>
+    </task>
+    <task id="LOCAL-00068" summary="updates">
+      <created>1555181706205</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1555181706205</updated>
+    </task>
+    <task id="LOCAL-00069" summary="updates">
+      <created>1555181738470</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1555181738470</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38688000" />
+    <option name="totallyTimeSpent" value="38902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20879121" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20879121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41632652" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41632652" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -818,11 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="859">
+          <caret line="105" column="36" lean-forward="true" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
         </state>
       </provider>
     </entry>
