@@ -4,6 +4,7 @@ import multiprocessing as mp
 import os
 import time
 
+import tqdm
 import utilsKTP1 as KTP1
 
 ON_SERVER = True
@@ -26,6 +27,17 @@ algoDict = {}
 for c in soundexAlgorithmNames:
     algoDict[c] = KTP1.generatePhoneticRepresentations.PhoneticRepresentation(c)
 
+# Generate phonetic representation for the whole dictionary
+phone_dict = {}
+dict_bar = tqdm.tqdm(dict)
+for word in dict_bar:
+    entry = {}
+    entry[word] = {}
+    dict_bar.set_description("Generating Phonetic Representation for Dictionary Words.")
+    for c in soundexAlgorithmNames:
+        entry[word][c] = algoDict[c].phonetics(word)
+    phone_dict[word] = entry
+
 def findMatchForASingleEntry(data_entry):
     result = {}
     result["misspell"] = data_entry[0]
@@ -46,8 +58,13 @@ def findMatchForASingleEntry(data_entry):
         soundexMaxTwoEdit[c] = []
     for word in dict:
         word_distance = {}
+        phone_entry = phone_dict[word]
         for c in soundexAlgorithmNames:
-            word_distance[c] = algoDict[c].edit_distance(misspell, word)
+            phone_misspell = algoDict[c].phonetics(misspell)
+            word_distance[c] = KTP1.calculateStringDistance.editDistance(phone_misspell, phone_entry[c])
+            # algoDict[
+            # c].edit_distance(misspell,
+            # word)
             if word_distance[c] < best_distances[c]:
                 best_distances[c] = word_distance[c]
                 result["soundex best match"][c] = word
