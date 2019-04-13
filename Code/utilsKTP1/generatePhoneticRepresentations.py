@@ -79,7 +79,6 @@ class PhoneticRepresentation:
             string = re.sub(r'-', "", string)
             string = re.sub(r' ', "", string)
             string = re.sub(r',', "", string)
-
         return string
 
 
