@@ -1,5 +1,5 @@
 """
-Modified from https://github.com/Lilykos/pyphonetics, with numba acceleration
+Modified from https://github.com/Lilykos/pyphonetics, only phonetics representation generation part
 """
 
 import re
