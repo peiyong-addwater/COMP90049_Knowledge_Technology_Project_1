@@ -51,6 +51,7 @@ def findMatchForASingleEntry(data_entry):
     misspell = data_entry[0]
     print("Finding match for %s" % misspell)
     result["target"] = data_entry[1]
+    result["OOV/IV"] = data_entry[2]
     if data_entry[-1] == True:
         result["original spelling status"] = "correct"
     else:
