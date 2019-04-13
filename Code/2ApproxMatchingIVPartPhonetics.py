@@ -30,6 +30,7 @@ def findMatchForASingleEntry(data_entry):
     result = {}
     result["misspell"] = data_entry[0]
     misspell = data_entry[0]
+    print("Finding match for %s" % misspell)
     result["target"] = data_entry[1]
     if data_entry[-1] == True:
         result["original spelling status"] = "correct"
@@ -56,6 +57,7 @@ def findMatchForASingleEntry(data_entry):
                 soundexMaxTwoEdit[c].append(word)
     result["soundex representation max 1 edit"] = soundexMaxOneEdit
     result["soundex representation max 2 edit"] = soundexMaxTwoEdit
+    print("Match for %s found" % data_entry[0])
     return result
 
 
@@ -69,7 +71,7 @@ if __name__ == '__main__':
         now = time.time()
         passed_time = now - start_time
         p_t = str(datetime.timedelta(seconds=passed_time))
-        # print(y)
+        print(y)
         res.append(y)
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
