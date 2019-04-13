@@ -29,9 +29,9 @@ with open(DICT, 'r') as fp:
     dict = json.load(fp)
 
 new_dict = additional_dict + dict
-print(len(new_dict))
+print("Original Dictionary Length: ", len(dict))
 new_dict = list(set(new_dict))
-print(len(new_dict))
+print("Expanded Dictionary Length: ", len(new_dict))
 new_data_entries = []
 mis = open(MISSPELL_FILENAME, 'r').readlines()
 correct = open(CORRECT_FILENAME, 'r').readlines()
@@ -40,6 +40,7 @@ with open(OUTPUT_DIR + "new_dict.json", 'w') as fp:
     json.dump(new_dict, fp, indent=4)
 print("Expanded dictionary saved to ", OUTPUT_DIR + "new_dict.json")
 for i in range(len(mis)):
+    print("Progress %d/%d" % (i + 1, len(mis)))
     if correct[i].rstrip('\n') in new_dict:
         entry = [mis[i].rstrip('\n'), correct[i].rstrip('\n'), 'IV']
     else:
