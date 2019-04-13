@@ -7,6 +7,13 @@ import time
 import tqdm
 import utilsKTP1 as KTP1
 
+"""
+Approximate String Matching with String Distance between Phonetic Representation of Words
+Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) cpus and 128 GiB 
+memory
+Total time:  ; Average Single Match Time  
+"""
+
 ON_SERVER = True
 if ON_SERVER:
     os.chdir("/home/peiyongw/Research/KT_Project1/COMP90049_Knowledge_Technology_Project_1")
