@@ -25,8 +25,6 @@ with open(DATA, 'r') as fp:
 with open(DICT, 'r') as fp:
     dict = json.load(fp)
 
-iv_data = [c for c in data if c[2] == "IV"]
-distance_matching_result = {}
 
 
 def findMatchForASingleEntry(data_entry):
@@ -92,7 +90,7 @@ if __name__ == '__main__':
     start_time = time.time()
     # res = pool.map(findMatchForASingleEntry, iv_data)
     cnt = 0
-    for y in pool.imap_unordered(findMatchForASingleEntry, iv_data):
+    for y in pool.imap_unordered(findMatchForASingleEntry, data):
         now = time.time()
         passed_time = now - start_time
         p_t = str(datetime.timedelta(seconds=passed_time))
