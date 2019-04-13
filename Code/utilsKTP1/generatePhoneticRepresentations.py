@@ -87,22 +87,29 @@ class PhoneticRepresentation:
     def phonetics(self, wordString):
         if not isinstance(wordString, str):
             raise UnicodeException('Expected a unicode string!')
-        return self.func(wordString)
+        wordString_p = self.wordPreprocess(wordString)
+        return self.func(wordString_p)
 
     def edit_distance(self, word1, word2):
         if isinstance(word1, str) and isinstance(word2, str):
-            return editDistance(self.phonetics(word1), self.phonetics(word2))
+            word1p = self.wordPreprocess(word1)
+            word2p = self.wordPreprocess(word2)
+            return editDistance(self.phonetics(word1p), self.phonetics(word2p))
         else:
             raise UnicodeException('Expected a unicode string!')
 
     def jaccard_distance(self, word1, word2):
         if isinstance(word1, str) and isinstance(word2, str):
-            return jaccardDistance(self.phonetics(word1), self.phonetics(word2))
+            word1p = self.wordPreprocess(word1)
+            word2p = self.wordPreprocess(word2)
+            return jaccardDistance(self.phonetics(word1p), self.phonetics(word2p))
         else:
             raise UnicodeException('Expected a unicode string!')
 
     def jaccard_ngram(self, word1, word2, n=3):
         if isinstance(word1, str) and isinstance(word2, str):
-            return jaccardDistanceNGram(self.phonetics(word1), self.phonetics(word2), n)
+            word1p = self.wordPreprocess(word1)
+            word2p = self.wordPreprocess(word2)
+            return jaccardDistanceNGram(self.phonetics(word1p), self.phonetics(word2p), n)
         else:
             raise UnicodeException('Expected a unicode string!')
