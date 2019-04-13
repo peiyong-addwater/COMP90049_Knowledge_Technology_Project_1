@@ -7,9 +7,9 @@ import time
 import utilsKTP1 as KTP1
 
 """
-Approximate String Matching with String Distance Metrics
+Approximate String Matching with String Distance Metrics On New Data Entries with Expanded Dictionary
 Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) and 128 GiB memory
-Total time: 8:25:46.621432; Average Single Match Time 0:00:03.552221
+Total time:  ; Average Single Match Time  
 """
 
 ON_SERVER = True
