@@ -52,7 +52,6 @@ with open(OUTPUT_DIR + "new_dict.json", 'w') as fp:
 print("Expanded dictionary saved to ", OUTPUT_DIR + "new_dict.json")
 print("Processing data according to expanded dictionary...")
 for i in tqdm(range(len(mis))):
-    # print("Progress %d/%d\r" % (i + 1, len(mis)))
     if correct[i].rstrip('\n') in new_dict:
         entry = [mis[i].rstrip('\n'), correct[i].rstrip('\n'), 'IV']
     else:
@@ -76,6 +75,7 @@ oov = len(mis) - iv
 total = len(new_data_entries)
 print("IV: ", iv, "/", total, '\t', "IV Ratio: ", iv / total)
 print("OOV: ", oov, "/", total, '\t', "OOV Ratio: ", oov / total)
+
 """
 Current working directory:  /home/peiyongw/Research/KT_Project1/COMP90049_Knowledge_Technology_Project_1
 Original Dictionary Length:  370099
