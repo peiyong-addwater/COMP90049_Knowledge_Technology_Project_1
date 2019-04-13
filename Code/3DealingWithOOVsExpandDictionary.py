@@ -1,10 +1,7 @@
-import datetime
 import json
-import multiprocessing as mp
 import os
-import time
+
 from tqdm import tqdm
-import utilsKTP1 as KTP1
 
 """
 Expanding the dictionary with words from https://github.com/first20hours/google-10000-english and
@@ -79,3 +76,18 @@ oov = len(mis) - iv
 total = len(new_data_entries)
 print("IV: ", iv, "/", total, '\t', "IV Ratio: ", iv / total)
 print("OOV: ", oov, "/", total, '\t', "OOV Ratio: ", oov / total)
+"""
+Current working directory:  /home/peiyongw/Research/KT_Project1/COMP90049_Knowledge_Technology_Project_1
+Original Dictionary Length:  370099
+Expanded Dictionary Length:  500808
+Saving expanded dictionary as .json...
+Expanded dictionary saved to  /home/peiyongw/Research/KT_Project1/COMP90049_Knowledge_Technology_Project_1
+/Code_Output/new_dict.json
+Processing data according to expanded dictionary...
+100%|█████████████████████████████████████| 10322/10322 [05:20<00:00, 31.34it/s]
+Saving misspelling-correct spelling data entries...
+New Data entries saved to  /home/peiyongw/Research/KT_Project1/COMP90049_Knowledge_Technology_Project_1/Code_Output
+/new_data_entries.json
+IV:  8832 / 10322 	 IV Ratio:  0.8556481302073241
+OOV:  1490 / 10322 	 OOV Ratio:  0.14435186979267584
+"""
