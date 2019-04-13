@@ -22,7 +22,7 @@ with open(DICT, 'r') as fp:
 
 iv_data = [c for c in data if c[2] == "IV"]
 phonetics_matching_result = {}
-soundexAlgorithmNames = ['metaphone', 'refined_soundex', 'soundex', 'mra']
+soundexAlgorithmNames = ['metaphone', 'refined_soundex', 'mra']
 algoDict = {}
 for c in soundexAlgorithmNames:
     algoDict[c] = KTP1.generatePhoneticRepresentations.PhoneticRepresentation(c)
@@ -32,7 +32,7 @@ phone_dict = {}
 dict_bar = tqdm.tqdm(dict)
 for word in dict_bar:
     phone_dict[word] = {}
-    dict_bar.set_description("Generating Phonetic Representation for Dictionary Words.")
+    dict_bar.set_description("Generating Phonetic Representation for Dictionary Words")
     for c in soundexAlgorithmNames:
         phone_dict[word][c] = algoDict[c].phonetics(word)
 
