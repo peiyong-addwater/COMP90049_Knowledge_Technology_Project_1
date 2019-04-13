@@ -98,9 +98,9 @@ if __name__ == '__main__':
         res.append(y)
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
-        est_remain_time = str(datetime.timedelta(seconds=(len(iv_data) - cnt) * (passed_time / cnt)))
+        est_remain_time = str(datetime.timedelta(seconds=(len(data) - cnt) * (passed_time / cnt)))
         print('Running Time: %s, Progress %d/%d; Average Single Match Time %s; Estimate Time Remaining: '
-              '%s.\r' % (p_t, cnt, len(iv_data), itr_time, est_remain_time))
+              '%s.\r' % (p_t, cnt, len(data), itr_time, est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "distance_matching_new_data_result.json", 'w') as fp:
         json.dump(res, fp, indent=4)
