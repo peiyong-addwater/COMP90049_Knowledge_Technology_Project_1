@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="1748">
+              <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1976">
+              <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -87,12 +95,12 @@
         <option value="$PROJECT_DIR$/Code/utilsKTP1/__init__.py" />
         <option value="$PROJECT_DIR$/Code/3DealingWithOOVsEditDistance.py" />
         <option value="$PROJECT_DIR$/Code/0DataPreprocess.py" />
-        <option value="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" />
         <option value="$PROJECT_DIR$/Code/3DealingWithOOVsExpandDictionary.py" />
         <option value="$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py" />
         <option value="$PROJECT_DIR$/Code/6EvalResults.py" />
         <option value="$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py" />
         <option value="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" />
+        <option value="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" />
       </list>
     </option>
   </component>
@@ -304,14 +312,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555064640222</updated>
       <workItem from="1555064643241" duration="32833000" />
-      <workItem from="1555173184028" duration="6934000" />
-    </task>
-    <task id="LOCAL-00025" summary="updates">
-      <created>1555084758842</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1555084758843</updated>
+      <workItem from="1555173184028" duration="7146000" />
     </task>
     <task id="LOCAL-00026" summary="updates">
       <created>1555085821453</created>
@@ -649,11 +650,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555183468215</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="updates">
+      <created>1555187491273</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1555187491273</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39767000" />
+    <option name="totallyTimeSpent" value="39979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -819,16 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -844,8 +842,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="1748">
+          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1976">
+          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
