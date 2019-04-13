@@ -71,7 +71,7 @@ if __name__ == '__main__':
         now = time.time()
         passed_time = now - start_time
         p_t = str(datetime.timedelta(seconds=passed_time))
-        print(y)
+        # print(y)
         res.append(y)
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))

@@ -5,7 +5,6 @@ Modified from https://github.com/Lilykos/pyphonetics, with numba acceleration
 import re
 from itertools import groupby
 
-import numba
 from unidecode import unidecode
 
 from .exceptions import UnicodeException
@@ -64,7 +63,6 @@ class Metaphone:
             (r'(?!^)[aeiou]+', r'')
         ]
 
-    @numba.jit()
     def phonetics(self, word):
         if not isinstance(word, str):
             raise UnicodeException('Expected a unicode string!')
@@ -87,7 +85,6 @@ class MatchingRatingApproach:
     def __init__(self):
         super().__init__()
 
-    @numba.jit()
     def phonetics(self, word):
         if not isinstance(word, str):
             raise UnicodeException('Expected a unicode string!')
@@ -121,7 +118,6 @@ class RefinedSoundex:
             '000000DD112233344555667889'
         )
 
-    @numba.jit()
     def phonetics(self, word):
         if not isinstance(word, str):
             raise UnicodeException('Expected a unicode string!')
@@ -152,7 +148,6 @@ class Soundex:
         )
         self.pad = lambda code: '{}0000'.format(code)[:4]
 
-    @numba.jit()
     def phonetics(self, word):
         if not isinstance(word, str):
             raise UnicodeException('Expected a unicode string!')
@@ -219,7 +214,6 @@ class FuzzySoundex:
         self.set3 = ['KN', 'NG']
         self.set4 = 'HWY'
 
-    @numba.jit()
     def phonetics(self, word):
         if not isinstance(word, str):
             raise UnicodeException('Expected a unicode string!')
