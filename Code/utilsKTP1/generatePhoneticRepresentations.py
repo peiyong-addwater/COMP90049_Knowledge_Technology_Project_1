@@ -1,7 +1,11 @@
-import pyphonetics
+import re
 
-from .exceptions import PhoneticAlgorithmError, UnicodeException
+import numba
+import pyphonetics
+from num2words import num2words
+
 from .calculateStringDistance import jaccardDistance, jaccardDistanceNGram, editDistance
+from .exceptions import PhoneticAlgorithmError, UnicodeException
 
 rs = pyphonetics.RefinedSoundex()
 metaphone = pyphonetics.Metaphone()
@@ -51,6 +55,34 @@ class PhoneticRepresentation:
             self.func = self.algorithm[self.func]
         else:
             raise PhoneticAlgorithmError('Invalid Phonetic Algorithm.')
+        self.replacementDict = {'0': 'o', '1': 'one', '2': 'to', '3': 'three', '4': 'four', '5': "five", '6': "six",
+                                '7': 'seven', '8': 'eight', '9': 'nine', '10': 'ten'}
+
+    @numba.jit()
+    def wordPreprocess(self, word):
+        if not isinstance(word, str):
+            raise UnicodeException('Expected a unicode string!')
+        charList = list(word)
+        for i in range(len(charList)):
+            if i == 0 and charList[i] == '0':
+                charList[i] = 'o'
+            elif charList[i] == '0' and (charList[i - 1] not in '123456789'):
+                charList[i] = 'o'
+        string = "".join(charList)
+        string = re.sub(r' ', "", string)
+        dp = re.compile(r"(\d+)")
+        m = dp.findall(string)
+        for c in m:
+            num = int(c)
+            p = re.compile(re.escape(c))
+            string = re.sub(p, num2words(num), string)
+            string = re.sub(r'-', "", string)
+            string = re.sub(r' ', "", string)
+            string = re.sub(r',', "", string)
+
+        return string
+
+
 
     def phonetics(self, wordString):
         if not isinstance(wordString, str):
