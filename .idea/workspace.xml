@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,23 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="895">
-              <caret line="105" lean-forward="true" selection-end-line="105" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-929">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="567">
+              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -57,13 +46,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="622">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -96,11 +88,11 @@
         <option value="$PROJECT_DIR$/Code/3DealingWithOOVsEditDistance.py" />
         <option value="$PROJECT_DIR$/Code/0DataPreprocess.py" />
         <option value="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" />
-        <option value="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" />
         <option value="$PROJECT_DIR$/Code/3DealingWithOOVsExpandDictionary.py" />
         <option value="$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py" />
-        <option value="$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py" />
         <option value="$PROJECT_DIR$/Code/6EvalResults.py" />
+        <option value="$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py" />
+        <option value="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" />
       </list>
     </option>
   </component>
@@ -312,21 +304,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555064640222</updated>
       <workItem from="1555064643241" duration="32833000" />
-      <workItem from="1555173184028" duration="6660000" />
-    </task>
-    <task id="LOCAL-00023" summary="updates">
-      <created>1555084706683</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1555084706683</updated>
-    </task>
-    <task id="LOCAL-00024" summary="updates">
-      <created>1555084721491</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1555084721491</updated>
+      <workItem from="1555173184028" duration="6934000" />
     </task>
     <task id="LOCAL-00025" summary="updates">
       <created>1555084758842</created>
@@ -657,14 +635,29 @@
       <option name="project" value="LOCAL" />
       <updated>1555182287915</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="updates">
+      <created>1555183195792</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1555183195792</updated>
+    </task>
+    <task id="LOCAL-00073" summary="updates">
+      <created>1555183468214</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1555183468215</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39493000" />
+    <option name="totallyTimeSpent" value="39767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20879121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -819,10 +812,30 @@
     <entry file="file://$PROJECT_DIR$/Code_Output/new_data_entries.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-929">
+        <state relative-caret-position="285">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="36" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -831,30 +844,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="105" lean-forward="true" selection-end-line="105" />
+        <state relative-caret-position="567">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

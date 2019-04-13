@@ -27,7 +27,7 @@ with open(DATA, 'r') as fp:
 with open(DICT, 'r') as fp:
     dict = json.load(fp)
 
-iv_data = [c for c in data if c[2] == "IV"]
+
 phonetics_matching_result = {}
 soundexAlgorithmNames = ['metaphone', 'refined_soundex', 'mra']
 algoDict = {}
@@ -53,6 +53,7 @@ def findMatchForASingleEntry(data_entry):
         result["original spelling status"] = "correct"
     else:
         result["original spelling status"] = "misspell"
+    result["OOV/IV"] = data_entry[2]
     best_distances = {}
     soundexMaxOneEdit = {}
     soundexMaxTwoEdit = {}
@@ -89,7 +90,7 @@ if __name__ == '__main__':
     start_time = time.time()
     # res = pool.map(findMatchForASingleEntry, iv_data)
     cnt = 0
-    for y in pool.imap_unordered(findMatchForASingleEntry, iv_data):
+    for y in pool.imap_unordered(findMatchForASingleEntry, data):
         now = time.time()
         passed_time = now - start_time
         p_t = str(datetime.timedelta(seconds=passed_time))
@@ -97,9 +98,9 @@ if __name__ == '__main__':
         res.append(y)
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
-        est_remain_time = str(datetime.timedelta(seconds=(len(iv_data) - cnt) * (passed_time / cnt)))
+        est_remain_time = str(datetime.timedelta(seconds=(len(data) - cnt) * (passed_time / cnt)))
         print('Running Time: %s, Progress %d/%d; Average Single Match Time %s; Estimate Time Remaining: '
-              '%s.\r' % (p_t, cnt, len(iv_data), itr_time, est_remain_time))
+              '%s.\r' % (p_t, cnt, len(data), itr_time, est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "soundex_matching_result.json", 'w') as fp:
         json.dump(res, fp, indent=4)
