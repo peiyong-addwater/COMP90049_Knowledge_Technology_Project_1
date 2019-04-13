@@ -21,7 +21,7 @@ with open(DICT, 'r') as fp:
 
 iv_data = [c for c in data if c[2] == "IV"]
 phonetics_matching_result = {}
-soundexAlgorithmNames = ['metaphone', 'soundex', 'refined_soundex', 'mra']
+soundexAlgorithmNames = ['metaphone', 'refined_soundex']
 algoDict = {}
 for c in soundexAlgorithmNames:
     algoDict[c] = KTP1.generatePhoneticRepresentations.PhoneticRepresentation(c)
