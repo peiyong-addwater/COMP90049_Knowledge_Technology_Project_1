@@ -55,14 +55,13 @@ def findMatchForASingleEntry(data_entry):
         result["original spelling status"] = "correct"
     else:
         result["original spelling status"] = "misspell"
-    best_distances = {}
     soundexMaxOneEdit = {}
     soundexMaxTwoEdit = {}
-    result["soundex best match"] = {}
+    result["same phonetic representation"] = {}
     for c in soundexAlgorithmNames:
-        best_distances[c] = float("inf")
         soundexMaxOneEdit[c] = []
         soundexMaxTwoEdit[c] = []
+        result["same phonetic representation"][c] = []  # list of words with the same phonetic representation
     for word in dict:
         word_distance = {}
         phone_entry = phone_dict[word]
@@ -72,9 +71,8 @@ def findMatchForASingleEntry(data_entry):
             # algoDict[
             # c].edit_distance(misspell,
             # word)
-            if word_distance[c] < best_distances[c]:
-                best_distances[c] = word_distance[c]
-                result["soundex best match"][c] = word
+            if word_distance[c] == 0:
+                result["same phonetic representation"][c].append(word)
             if word_distance[c] <= 1:
                 soundexMaxTwoEdit[c].append(word)
             if word_distance[c] <= 2:
@@ -100,7 +98,9 @@ if __name__ == '__main__':
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
         est_remain_time = str(datetime.timedelta(seconds=(len(data) - cnt) * (passed_time / cnt)))
-        print('Running Time: %s, Progress %d/%d; Average Single Match Time %s; Estimate Time Remaining: '
+        print(
+            '"5ApproxMatchingNewDataPhonetics.py" Running Time: %s, Progress %d/%d; Average Single Match Time %s; '
+            'Estimate Time Remaining: '
               '%s.\r' % (p_t, cnt, len(data), itr_time, est_remain_time))
     print("Saving results...")
     with open(OUTPUT_DIR + "soundex_matching_new_data_result.json", 'w') as fp:
