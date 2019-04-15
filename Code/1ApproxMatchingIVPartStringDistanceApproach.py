@@ -9,7 +9,8 @@ import utilsKTP1 as KTP1
 """
 Approximate String Matching with String Distance Metrics
 Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) and 128 GiB memory
-Total time: 8:25:46.621432; Average Single Match Time 0:00:03.552221
+"1ApproxMatchingIVPartStringDistanceApproach.py" Running Time: 22:55:49.284750, Progress 10322/10322; 
+Average Single Match Time 0:00:07.997412
 """
 
 ON_SERVER = True
