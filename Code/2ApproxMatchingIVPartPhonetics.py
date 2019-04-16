@@ -92,7 +92,7 @@ if __name__ == '__main__':
         now = time.time()
         passed_time = now - start_time
         p_t = str(datetime.timedelta(seconds=passed_time))
-        # print(y)
+        print(y)
         res.append(y)
         print("Number of results: ", len(res))
         cnt += 1
