@@ -86,7 +86,7 @@ def findMatchForASingleEntry(data_entry):
 
 if __name__ == '__main__':
     pool = mp.Pool()
-    res = []
+    res4 = []
     start_time = time.time()
     # res = pool.map(findMatchForASingleEntry, iv_data)
     cnt = 0
@@ -95,7 +95,7 @@ if __name__ == '__main__':
         passed_time = now - start_time
         p_t = str(datetime.timedelta(seconds=passed_time))
         # print(y)
-        res.append(y)
+        res4.append(y)
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
         est_remain_time = str(datetime.timedelta(seconds=(len(data) - cnt) * (passed_time / cnt)))
@@ -104,5 +104,5 @@ if __name__ == '__main__':
             'Time %s; Estimate Time Remaining: '
               '%s.\r' % (p_t, cnt, len(data), itr_time, est_remain_time))
     print("Saving results...")
-    with open(OUTPUT_DIR + "distance_matching_new_data_result.json", 'w') as fp:
-        json.dump(res, fp, indent=4)
+    with open(OUTPUT_DIR + "distance_matching_new_data_result.json", 'w') as fp4:
+        json.dump(res4, fp4, indent=4)

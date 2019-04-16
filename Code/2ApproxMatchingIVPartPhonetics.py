@@ -94,6 +94,7 @@ if __name__ == '__main__':
         p_t = str(datetime.timedelta(seconds=passed_time))
         # print(y)
         res.append(y)
+        print("Number of results: ", len(res))
         cnt += 1
         itr_time = str(datetime.timedelta(seconds=passed_time / cnt))
         est_remain_time = str(datetime.timedelta(seconds=(len(data) - cnt) * (passed_time / cnt)))
