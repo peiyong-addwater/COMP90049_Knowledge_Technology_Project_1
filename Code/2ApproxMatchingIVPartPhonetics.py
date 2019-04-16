@@ -54,12 +54,12 @@ def findMatchForASingleEntry(data_entry):
     else:
         result["original spelling status"] = "misspell"
     result["OOV/IV"] = data_entry[2]
-    soundexMaxOneEdit = {}
-    soundexMaxTwoEdit = {}
+    # soundexMaxOneEdit = {}
+    # soundexMaxTwoEdit = {}
     result["same phonetic representation"] = {}
     for c in soundexAlgorithmNames:
-        soundexMaxOneEdit[c] = []
-        soundexMaxTwoEdit[c] = []
+        # soundexMaxOneEdit[c] = []
+        #soundexMaxTwoEdit[c] = []
         result["same phonetic representation"][c] = []  # list of words with the same phonetic representation
     for word in dict:
         word_distance = {}
