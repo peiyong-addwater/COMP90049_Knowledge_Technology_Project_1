@@ -60,6 +60,7 @@ def findMatchForASingleEntry(data_entry):
     for c in soundexAlgorithmNames:
         soundexMaxOneEdit[c] = []
         soundexMaxTwoEdit[c] = []
+        result["same phonetic representation"][c] = []  # list of words with the same phonetic representation
     for word in dict:
         word_distance = {}
         phone_entry = phone_dict[word]
@@ -69,7 +70,7 @@ def findMatchForASingleEntry(data_entry):
             # algoDict[
             # c].edit_distance(misspell,
             # word)
-            result["same phonetic representation"][c] = []  # list of words with the same phonetic representation
+
             if word_distance[c] == 0:
                 result["same phonetic representation"][c].append(word)
             # if word_distance[c] <= 1:
