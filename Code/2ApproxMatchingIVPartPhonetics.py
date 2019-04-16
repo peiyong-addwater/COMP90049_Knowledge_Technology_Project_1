@@ -72,12 +72,12 @@ def findMatchForASingleEntry(data_entry):
             result["same phonetic representation"][c] = []  # list of words with the same phonetic representation
             if word_distance[c] == 0:
                 result["same phonetic representation"][c].append(word)
-            if word_distance[c] <= 1:
-                soundexMaxTwoEdit[c].append(word)
-            if word_distance[c] <= 2:
-                soundexMaxTwoEdit[c].append(word)
-    result["soundex representation max 1 edit"] = soundexMaxOneEdit
-    result["soundex representation max 2 edit"] = soundexMaxTwoEdit
+            # if word_distance[c] <= 1:
+            #    soundexMaxTwoEdit[c].append(word)
+            # if word_distance[c] <= 2:
+            #    soundexMaxTwoEdit[c].append(word)
+    # result["soundex representation max 1 edit"] = soundexMaxOneEdit
+    # result["soundex representation max 2 edit"] = soundexMaxTwoEdit
     print("Match for %s found" % data_entry[0])
     return result
 
