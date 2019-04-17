@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_Output/distance_matching_result.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Output/distance_matching_result.json" afterDir="false" />
     </list>
@@ -56,11 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
               <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -99,11 +109,11 @@
         <option value="$PROJECT_DIR$/Code/0DataPreprocess.py" />
         <option value="$PROJECT_DIR$/Code/3DealingWithOOVsExpandDictionary.py" />
         <option value="$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" />
         <option value="$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py" />
         <option value="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" />
         <option value="$PROJECT_DIR$/Code/6EvalResults.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -314,14 +324,7 @@
       <workItem from="1555509594739" duration="605000" />
       <workItem from="1555528666858" duration="58000" />
       <workItem from="1555528749692" duration="115000" />
-      <workItem from="1555529042774" duration="607000" />
-    </task>
-    <task id="LOCAL-00039" summary="updates">
-      <created>1555157192481</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1555157192481</updated>
+      <workItem from="1555529042774" duration="629000" />
     </task>
     <task id="LOCAL-00040" summary="updates">
       <created>1555157319125</created>
@@ -659,11 +662,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555510551828</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="updates">
+      <created>1555530034239</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1555530034239</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46271000" />
+    <option name="totallyTimeSpent" value="46293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -681,10 +691,10 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.4993895" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.498779" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50061053" side_tool="true" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.501221" side_tool="true" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -823,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Code_Output/distance_matching_result.json">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="-727446" />
@@ -870,6 +873,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
