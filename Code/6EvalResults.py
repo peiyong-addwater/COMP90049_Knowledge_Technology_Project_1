@@ -25,7 +25,16 @@ with open(OUTPUT_DIR + c, 'r') as f:
 """
 Print sample results
 """
-print(distance_result[0])
-print(soundex_result[0])
-print(distance_new_data[0])
-print(soundex_new_data[0])
+print(distance_result[3576])
+print(soundex_result[3456])
+print(distance_new_data[1267])
+print(soundex_new_data[9845])
+
+"""
+Evaluation of results
+"""
+eval_distance_result = {}
+eval_soundex_result = {}
+eval_distacne_new_data = {}
+eval_soundex_new_data = {}
+
