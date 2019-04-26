@@ -9,7 +9,6 @@ import utilsKTP1 as KTP1
 """
 Approximate String Matching with String Distance Metrics On New Data Entries with Expanded Dictionary
 Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) and 128 GiB memory
-Total time:  ; Average Single Match Time  
 """
 
 ON_SERVER = True
@@ -88,7 +87,6 @@ if __name__ == '__main__':
     pool = mp.Pool()
     res4 = []
     start_time = time.time()
-    # res = pool.map(findMatchForASingleEntry, iv_data)
     cnt = 0
     for y in pool.imap_unordered(findMatchForASingleEntry, data):
         now = time.time()

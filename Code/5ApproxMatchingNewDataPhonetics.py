@@ -12,7 +12,6 @@ Approximate String Matching with String Distance between Phonetic Representation
 On New Data Entries with Expanded Dictionary
 Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) cpus and 128 GiB 
 memory
-Total time:  ; Average Single Match Time  
 """
 
 ON_SERVER = True
@@ -55,12 +54,8 @@ def findMatchForASingleEntry(data_entry):
         result["original spelling status"] = "correct"
     else:
         result["original spelling status"] = "misspell"
-    # soundexMaxOneEdit = {}
-    # soundexMaxTwoEdit = {}
     result["same phonetic representation"] = {}
     for c in soundexAlgorithmNames:
-        # soundexMaxOneEdit[c] = []
-        #soundexMaxTwoEdit[c] = []
         result["same phonetic representation"][c] = []  # list of words with the same phonetic representation
     for word in dict:
         word_distance = {}
@@ -68,17 +63,8 @@ def findMatchForASingleEntry(data_entry):
         for c in soundexAlgorithmNames:
             phone_misspell = algoDict[c].phonetics(misspell)
             word_distance[c] = KTP1.calculateStringDistance.editDistance(phone_misspell, phone_entry[c])
-            # algoDict[
-            # c].edit_distance(misspell,
-            # word)
             if word_distance[c] == 0:
                 result["same phonetic representation"][c].append(word)
-    #       if word_distance[c] <= 1:
-    #           soundexMaxTwoEdit[c].append(word)
-    #       if word_distance[c] <= 2:
-    #           soundexMaxTwoEdit[c].append(word)
-    # result["soundex representation max 1 edit"] = soundexMaxOneEdit
-    # result["soundex representation max 2 edit"] = soundexMaxTwoEdit
     print("Match for %s found" % data_entry[0])
     return result
 
@@ -87,7 +73,6 @@ if __name__ == '__main__':
     pool = mp.Pool()
     res = []
     start_time = time.time()
-    # res = pool.map(findMatchForASingleEntry, iv_data)
     cnt = 0
     for y in pool.imap_unordered(findMatchForASingleEntry, data):
         now = time.time()

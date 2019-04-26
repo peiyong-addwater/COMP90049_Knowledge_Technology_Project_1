@@ -9,8 +9,6 @@ import utilsKTP1 as KTP1
 """
 Approximate String Matching with String Distance Metrics
 Running on a workstation with double Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz (total 32 threads) and 128 GiB memory
-"1ApproxMatchingIVPartStringDistanceApproach.py" Running Time: 22:55:49.284750, Progress 10322/10322; 
-Average Single Match Time 0:00:07.997412
 """
 
 ON_SERVER = True
@@ -45,9 +43,7 @@ def findMatchForASingleEntry(data_entry):
     edit_2 = []  # words with maximum 2 edits
     edit_1 = []  # words with maximum 1 edits
     jaccard3_20 = []  # 3 gram with jaccard distance no greater than 0.20
-    # jaccard3_10 = []  # 3 gram with jaccard distance no greater than 0.10
     jaccard2_20 = []  # 2 gram with jaccard distance no greater than 0.20
-    # jaccard2_10 = []  # 2 gram with jaccard distance no greater than 0.10
     for word in dict:
         edit_distance_word = KTP1.calculateStringDistance.editDistance(data_entry[0], word)
         two_gram_distance_word = KTP1.calculateStringDistance.jaccardDistanceNGram(data_entry[0], word, 2)
@@ -76,9 +72,7 @@ def findMatchForASingleEntry(data_entry):
     result["Edit Distance No More Than 2"] = edit_2
     result["Edit Distance No More Than 1"] = edit_1
     result["3-Gram Jaccard Distance No More Than 0.2"] = jaccard3_20
-    #result["3-Gram Jaccard Distance No More Than 0.1"] = jaccard3_10
     result["2-Gram Jaccard Distance No More Than 0.2"] = jaccard2_20
-    # result["2-Gram Jaccard Distance No More Than 0.1"] = jaccard2_10
     print("Match for %s found" % data_entry[0])
     return result
 
@@ -87,7 +81,6 @@ if __name__ == '__main__':
     pool = mp.Pool()
     res1 = []
     start_time = time.time()
-    # res = pool.map(findMatchForASingleEntry, iv_data)
     cnt = 0
     for y in pool.imap_unordered(findMatchForASingleEntry, data):
         now = time.time()
