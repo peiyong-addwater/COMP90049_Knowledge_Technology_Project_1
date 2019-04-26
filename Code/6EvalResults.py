@@ -190,7 +190,7 @@ for c in soundex_new_data:
 # print("----------Single Result Evaluation Sample----------")
 # print(eval_distance_result[99],'\n')
 #print(eval_distacne_new_data[99])
-print(eval_soundex_result[99])
+#print(eval_soundex_result[99])
 #print(eval_soundex_new_data[99])
 
 '''
@@ -636,3 +636,5 @@ updated_dict['mra']['Recall for mra on Entire Dataset, IV'] = len([c for c in ev
 print(original_dict, '\n')
 print(updated_dict,'\n')
 result_evaluation = {'With Original Dictionary': original_dict, 'With Updated Dictionary': updated_dict}
+with open(OUTPUT_DIR + 'result_evaluation.json', 'w') as fp:
+    json.dump(result_evaluation, fp, indent=4)
