@@ -25,11 +25,11 @@ with open(OUTPUT_DIR + c, 'r') as f:
 """
 Print sample results
 """
-print("----------Sample Result----------")
-print(distance_result[0])
-print(soundex_result[0])
-print(distance_new_data[0])
-print(soundex_new_data[0])
+# print("----------Sample Result----------")
+# print(distance_result[0])
+# print(soundex_result[0])
+# print(distance_new_data[0])
+# print(soundex_new_data[0])
 
 """
 Evaluation of single result
@@ -187,53 +187,249 @@ for c in soundex_new_data:
         single_eval['mra total'] = len(c['same phonetic representation']['mra'])
     eval_soundex_new_data.append(single_eval)
 
-print("----------Single Result Evaluation Sample----------")
-print(eval_distance_result[99])
-print(eval_distacne_new_data[99])
+# print("----------Single Result Evaluation Sample----------")
+# print(eval_distance_result[99],'\n')
+#print(eval_distacne_new_data[99])
 print(eval_soundex_result[99])
-print(eval_soundex_new_data[99])
-"""
-{'misspell': 'usa', 'target': 'use', 'original spelling status': 'misspell', 'OOV/IV': 'IV', 'Minimum Levenshtein 
-Distance': 0, '3-Gram with Jaccard Best Match': 0, '2-Gram with Jaccard Best Match': 0, 'Edit Distance No More Than 
-2': 1, 'Edit Distance No More Than 2 Total': 561, 'Edit Distance No More Than 1': 1, 'Edit Distance No More Than 1 
-Total': 20, '3-Gram Jaccard Distance No More Than 0.2': 0, '3-Gram Jaccard Distance No More Than 0.2 Total': 1, 
-'2-Gram Jaccard Distance No More Than 0.2': 0, '2-Gram Jaccard Distance No More Than 0.2 Total': 1}
-{'misspell': 'in', 'target': 'in', 'original spelling status': 'correct', 'OOV/IV': 'IV', 'Minimum Levenshtein 
-Distance': 1, '3-Gram with Jaccard Best Match': 1, '2-Gram with Jaccard Best Match': 1, 'Edit Distance No More Than 
-2': 1, 'Edit Distance No More Than 2 Total': 2137, 'Edit Distance No More Than 1': 1, 'Edit Distance No More Than 1 
-Total': 89, '3-Gram Jaccard Distance No More Than 0.2': 1, '3-Gram Jaccard Distance No More Than 0.2 Total': 1, 
-'2-Gram Jaccard Distance No More Than 0.2': 1, '2-Gram Jaccard Distance No More Than 0.2 Total': 1}
-{'misspell': 'c', 'target': 'see', 'original spelling status': 'misspell', 'OOV/IV': 'IV', 'metaphone total': 82, 
-'metaphone': 0, 'refined_soundex': 0, 'refined_soundex total': 14, 'mra': 0, 'mra total': 37}
-{'misspell': 'c', 'target': 'see', 'original spelling status': 'misspell', 'OOV/IV': 'IV', 'metaphone total': 206, 
-'metaphone': 0, 'refined_soundex': 0, 'refined_soundex total': 39, 'mra': 0, 'mra total': 112}
-"""
+#print(eval_soundex_new_data[99])
 
 '''
 Statistics of the Results
 '''
 original_dict = {}
+original_dict['Minimum Levenshtein Distance'] = {}
+original_dict['Edit Distance No More Than 2'] = {}
+original_dict['Edit Distance No More Than 1'] = {}
+original_dict['3-Gram with Jaccard Best Match'] = {}
+original_dict['2-Gram with Jaccard Best Match'] = {}
+original_dict['2-Gram Jaccard Distance No More Than 0.2'] = {}
+original_dict['3-Gram Jaccard Distance No More Than 0.2'] = {}
+original_dict['metaphone'] = {}
+original_dict['refined_soundex'] = {}
+original_dict['mra'] = {}
+
 updated_dict = {}
+updated_dict['Minimum Levenshtein Distance'] = {}
+updated_dict['Edit Distance No More Than 2'] = {}
+updated_dict['Edit Distance No More Than 1'] = {}
+updated_dict['3-Gram with Jaccard Best Match'] = {}
+updated_dict['2-Gram with Jaccard Best Match'] = {}
+updated_dict['2-Gram Jaccard Distance No More Than 0.2'] = {}
+updated_dict['3-Gram Jaccard Distance No More Than 0.2'] = {}
+updated_dict['metaphone'] = {}
+updated_dict['refined_soundex'] = {}
+updated_dict['mra'] = {}
+
+
+
 # Average precision = corrected ones in the returned words / total number of returned words on the entire dataset
 # Recall is calculated based on the correct words (treat correct words as 'relevant')
-# Statistics for original_dict
-mld_status_corrected = sum([c['Minimum Levenshtein Distance'] for c in eval_distance_result])
-mld_avg_pre = mld_status_corrected / len(eval_distance_result)
-original_dict['Average Precision for Minimum Levenshtein Distance'] = mld_avg_pre
-# print(mld_avg_pre)
-all_correct = sum([c['original spelling status'] == 'correct' for c in eval_distance_result])
-mld_correct_still_correct = sum([c['original spelling status'] == 'correct' and c['Minimum Levenshtein Distance'] ==
-                                 1 for c in eval_distance_result])
-mld_recall_for_corrected_ones = mld_correct_still_correct / all_correct
-# print(mld_recall_for_corrected_ones)
-original_dict['Recall (Based on Corrected Spellings) for Minimum Levenshtein Distance'] = mld_recall_for_corrected_ones
-edit_less_than_2_pre = sum([c['Edit Distance No More Than 2'] for c in eval_distance_result]) / sum(
-    [c['Edit Distance No '
-       'More Than 2 Total']
-     for c in eval_distance_result])
+###############################
+# Statistics for original_dict#
+###############################
 
-# print(edit_less_than_2_pre)
-original_dict['Average Precision for Edit Distance No More Than 2'] = edit_less_than_2_pre
-edit_less_than_2_recall = sum([c['original spelling status'] == 'correct' and c['Edit Distance No More Than 2'] == 1
-                               for c in eval_distance_result]) / all_correct
-# print(edit_less_than_2_recall)
+ALL_IV_NEED_CORRECTION = len(
+    [c for c in eval_distance_result if c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+ALL_CORRECT_SPELLING = len(
+    [c for c in eval_distance_result if c['original spelling status'] == 'correct'])  # to calculate the recall
+ALL_CORRECT_SPELLING_IV = len([c for c in eval_distance_result if c['original spelling status'] == 'correct' and c[
+    'OOV/IV'] == 'IV'])  # to calculate the recall
+
+ALL_IV_NEED_CORRECTION_PH = len(
+    [c for c in eval_soundex_result if c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+ALL_CORRECT_SPELLING_PH = len(
+    [c for c in eval_soundex_result if c['original spelling status'] == 'correct'])  # to calculate the recall
+ALL_CORRECT_SPELLING_IV_PH = len([c for c in eval_soundex_result if c['original spelling status'] == 'correct' and c[
+    'OOV/IV'] == 'IV'])  # to calculate the recall
+
+mld_status_corrected = sum(
+    [c['Minimum Levenshtein Distance'] for c in eval_distance_result if c['Minimum Levenshtein Distance'] == 1])
+original_dict['Minimum Levenshtein Distance'][
+    'Precision for Minimum Levenshtein Distance on Entire Dataset'] = mld_status_corrected / len(
+    [c['Minimum Levenshtein Distance'] for c in eval_distance_result])
+original_dict['Minimum Levenshtein Distance'][
+    'Precision for Minimum Levenshtein Distance on the Misspellings which are IV'] = sum(
+    [c['Minimum Levenshtein Distance'] for c in eval_distance_result if
+     c['Minimum Levenshtein Distance'] == 1 and c['original spelling status'] == 'misspell' and c[
+         'OOV/IV'] == 'IV']) / ALL_IV_NEED_CORRECTION
+original_dict['Minimum Levenshtein Distance']['Recall for Minimum Levenshtein Distance on Entire Dataset'] = len(
+    [c for c in eval_distance_result if
+     c['Minimum Levenshtein Distance'] == 1 and c['original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING
+original_dict['Minimum Levenshtein Distance']['Recall for Minimum Levenshtein Distance on Entire Dataset, IV'] = len(
+    [c for c in eval_distance_result if
+     c['Minimum Levenshtein Distance'] == 1 and c['original spelling status'] == 'correct' and c[
+         'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV
+
+original_dict['Edit Distance No More Than 2']['Precision for Edit Distance No More Than 2 on Entire Dataset'] = sum(
+    [c['Edit Distance No More Than 2'] for c in eval_distance_result]) / sum(
+    [c['Edit Distance No More Than 2 Total'] for c in eval_distance_result])
+original_dict['Edit Distance No More Than 2'][
+    'Precision for Edit Distance No More Than 2 on the Misspellings which are IV'] = sum(
+    [c['Edit Distance No More Than 2'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['Edit Distance No More Than 2 Total'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['Edit Distance No More Than 2']['Recall for Edit Distance No More Than 2 on Entire Dataset'] = len(
+    [c for c in eval_distance_result if
+     c['Edit Distance No More Than 2'] == 1 and c['original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING
+original_dict['Edit Distance No More Than 2']['Recall for Edit Distance No More Than 2 on Entire Dataset, IV'] = len(
+    [c for c in eval_distance_result if
+     c['Edit Distance No More Than 2'] == 1 and c['original spelling status'] == 'correct' and c[
+         'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV
+
+original_dict['Edit Distance No More Than 1']['Precision for Edit Distance No More Than 1 on Entire Dataset'] = sum(
+    [c['Edit Distance No More Than 1'] for c in eval_distance_result]) / sum(
+    [c['Edit Distance No More Than 1 Total'] for c in eval_distance_result])
+original_dict['Edit Distance No More Than 1'][
+    'Precision for Edit Distance No More Than 1 on the Misspellings which are IV'] = sum(
+    [c['Edit Distance No More Than 1'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['Edit Distance No More Than 1 Total'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['Edit Distance No More Than 1']['Recall for Edit Distance No More Than 1 on Entire Dataset'] = len(
+    [c for c in eval_distance_result if
+     c['Edit Distance No More Than 1'] == 1 and c['original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING
+original_dict['Edit Distance No More Than 1']['Recall for Edit Distance No More Than 1 on Entire Dataset, IV'] = len(
+    [c for c in eval_distance_result if
+     c['Edit Distance No More Than 1'] == 1 and c['original spelling status'] == 'correct' and c[
+         'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV
+
+original_dict['3-Gram with Jaccard Best Match']['Precision for 3-Gram with Jaccard Best Match on Entire Dataset'] = sum(
+    [c['3-Gram with Jaccard Best Match'] for c in eval_distance_result]) / len(
+    [c['3-Gram with Jaccard Best Match'] for c in eval_distance_result])
+original_dict['3-Gram with Jaccard Best Match'][
+    'Precision for 3-Gram with Jaccard Best Match on the Misspellings which are IV'] = sum(
+    [c['3-Gram with Jaccard Best Match'] for c in eval_distance_result if
+     c['3-Gram with Jaccard Best Match'] == 1 and c['original spelling status'] == 'misspell' and c[
+         'OOV/IV'] == 'IV']) / ALL_IV_NEED_CORRECTION
+original_dict['3-Gram with Jaccard Best Match']['Recall for 3-Gram with Jaccard Best Match on Entire Dataset'] = len(
+    [c for c in eval_distance_result if
+     c['3-Gram with Jaccard Best Match'] == 1 and c['original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING
+original_dict['3-Gram with Jaccard Best Match'][
+    'Recall for 3-Gram with Jaccard Best Match on Entire Dataset, IV'] = len([c for c in eval_distance_result if c[
+    '3-Gram with Jaccard Best Match'] == 1 and c['original spelling status'] == 'correct' and c[
+                                                                                  'OOV/IV'] == 'IV']) / \
+                                                                         ALL_CORRECT_SPELLING_IV
+
+original_dict['2-Gram with Jaccard Best Match']['Precision for 2-Gram with Jaccard Best Match on Entire Dataset'] = sum(
+    [c['2-Gram with Jaccard Best Match'] for c in eval_distance_result]) / len(
+    [c['2-Gram with Jaccard Best Match'] for c in eval_distance_result])
+original_dict['2-Gram with Jaccard Best Match'][
+    'Precision for 2-Gram with Jaccard Best Match on the Misspellings which are IV'] = sum(
+    [c['2-Gram with Jaccard Best Match'] for c in eval_distance_result if
+     c['2-Gram with Jaccard Best Match'] == 1 and c['original spelling status'] == 'misspell' and c[
+         'OOV/IV'] == 'IV']) / ALL_IV_NEED_CORRECTION
+original_dict['2-Gram with Jaccard Best Match']['Recall for 2-Gram with Jaccard Best Match on Entire Dataset'] = len(
+    [c for c in eval_distance_result if
+     c['2-Gram with Jaccard Best Match'] == 1 and c['original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING
+original_dict['2-Gram with Jaccard Best Match'][
+    'Recall for 2-Gram with Jaccard Best Match on Entire Dataset, IV'] = len([c for c in eval_distance_result if c[
+    '2-Gram with Jaccard Best Match'] == 1 and c['original spelling status'] == 'correct' and c[
+                                                                                  'OOV/IV'] == 'IV']) / \
+                                                                         ALL_CORRECT_SPELLING_IV
+
+original_dict['3-Gram Jaccard Distance No More Than 0.2'][
+    'Precision for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset'] = sum(
+    [c['3-Gram Jaccard Distance No More Than 0.2'] for c in eval_distance_result]) / sum(
+    [c['3-Gram Jaccard Distance No More Than 0.2 Total'] for c in eval_distance_result])
+original_dict['3-Gram Jaccard Distance No More Than 0.2'][
+    'Precision for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV'] = sum(
+    [c['3-Gram Jaccard Distance No More Than 0.2'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['3-Gram Jaccard Distance No More Than 0.2 Total'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['3-Gram Jaccard Distance No More Than 0.2'][
+    'Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset'] = len([c for c in eval_distance_result if
+                                                                                    c[
+                                                                                        '3-Gram Jaccard Distance No '
+                                                                                        'More Than 0.2'] == 1 and
+                                                                                    c[
+                                                                                        'original spelling status']
+                                                                                    == 'correct']) / \
+                                                                               ALL_CORRECT_SPELLING
+original_dict['3-Gram Jaccard Distance No More Than 0.2'][
+    'Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV'] = len(
+    [c for c in eval_distance_result if
+     c['3-Gram Jaccard Distance No More Than 0.2'] == 1 and c['original spelling status'] == 'correct' and c[
+         'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV
+
+original_dict['2-Gram Jaccard Distance No More Than 0.2'][
+    'Precision for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset'] = sum(
+    [c['2-Gram Jaccard Distance No More Than 0.2'] for c in eval_distance_result]) / sum(
+    [c['2-Gram Jaccard Distance No More Than 0.2 Total'] for c in eval_distance_result])
+original_dict['2-Gram Jaccard Distance No More Than 0.2'][
+    'Precision for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV'] = sum(
+    [c['2-Gram Jaccard Distance No More Than 0.2'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['2-Gram Jaccard Distance No More Than 0.2 Total'] for c in eval_distance_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['2-Gram Jaccard Distance No More Than 0.2'][
+    'Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset'] = len([c for c in eval_distance_result if
+                                                                                    c[
+                                                                                        '2-Gram Jaccard Distance No '
+                                                                                        'More Than 0.2'] == 1 and
+                                                                                    c[
+                                                                                        'original spelling status']
+                                                                                    == 'correct']) / \
+                                                                               ALL_CORRECT_SPELLING
+original_dict['2-Gram Jaccard Distance No More Than 0.2'][
+    'Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV'] = len(
+    [c for c in eval_distance_result if
+     c['2-Gram Jaccard Distance No More Than 0.2'] == 1 and c['original spelling status'] == 'correct' and c[
+         'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV
+
+original_dict['metaphone']['Precision for metaphone on Entire Dataset'] = sum(
+    [c['metaphone'] for c in eval_soundex_result]) / sum([c['metaphone total'] for c in eval_soundex_result])
+original_dict['metaphone']['Precision for metaphone on the Misspellings which are IV'] = sum(
+    [c['metaphone'] for c in eval_soundex_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['metaphone total'] for c in eval_soundex_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['metaphone']['Recall for metaphone on Entire Dataset'] = len([c for c in eval_soundex_result if
+                                                                            c['metaphone'] == 1 and c[
+                                                                                'original spelling status'] ==
+                                                                            'correct']) / ALL_CORRECT_SPELLING_PH
+original_dict['metaphone']['Recall for metaphone on Entire Dataset, IV'] = len([c for c in eval_soundex_result if
+                                                                                c['metaphone'] == 1 and c[
+                                                                                    'original spelling status'] ==
+                                                                                'correct' and
+                                                                                c[
+                                                                                    'OOV/IV'] == 'IV']) / \
+                                                                           ALL_CORRECT_SPELLING_IV_PH
+
+original_dict['refined_soundex']['Precision for refined_soundex on Entire Dataset'] = sum(
+    [c['refined_soundex'] for c in eval_soundex_result]) / sum(
+    [c['refined_soundex total'] for c in eval_soundex_result])
+original_dict['refined_soundex']['Precision for refined_soundex on the Misspellings which are IV'] = sum(
+    [c['refined_soundex'] for c in eval_soundex_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['refined_soundex total'] for c in eval_soundex_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['refined_soundex']['Recall for refined_soundex on Entire Dataset'] = len(
+    [c for c in eval_soundex_result if
+     c['refined_soundex'] == 1 and c['original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING_PH
+original_dict['refined_soundex']['Recall for refined_soundex on Entire Dataset, IV'] = len(
+    [c for c in eval_soundex_result if c['refined_soundex'] == 1 and c['original spelling status'] == 'correct' and c[
+        'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV_PH
+
+original_dict['mra']['Precision for mra on Entire Dataset'] = sum([c['mra'] for c in eval_soundex_result]) / sum(
+    [c['mra total'] for c in eval_soundex_result])
+original_dict['mra']['Precision for mra on the Misspellings which are IV'] = sum(
+    [c['mra'] for c in eval_soundex_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV']) / sum(
+    [c['mra total'] for c in eval_soundex_result if
+     c['original spelling status'] == 'misspell' and c['OOV/IV'] == 'IV'])
+original_dict['mra']['Recall for mra on Entire Dataset'] = len([c for c in eval_soundex_result if c['mra'] == 1 and c[
+    'original spelling status'] == 'correct']) / ALL_CORRECT_SPELLING_PH
+original_dict['mra']['Recall for mra on Entire Dataset, IV'] = len([c for c in eval_soundex_result if
+                                                                    c['mra'] == 1 and c[
+                                                                        'original spelling status'] == 'correct' and c[
+                                                                        'OOV/IV'] == 'IV']) / ALL_CORRECT_SPELLING_IV_PH
+
+##############################
+# Statistics for updated_dict#
+##############################
+
+
+print(original_dict, '\n')
+print(updated_dict,'\n')
