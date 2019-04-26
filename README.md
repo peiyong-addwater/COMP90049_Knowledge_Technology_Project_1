@@ -49,3 +49,4 @@ COMP90049_Knowledge_Technology_Project_1
 |   |   misspell.txt
 |
 ```
+The Code folder contains the necessary scripts 
