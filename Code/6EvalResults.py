@@ -25,13 +25,14 @@ with open(OUTPUT_DIR + c, 'r') as f:
 """
 Print sample results
 """
+print("----------Sample Result----------")
 print(distance_result[0])
 print(soundex_result[0])
 print(distance_new_data[0])
 print(soundex_new_data[0])
 
 """
-Evaluation of results
+Evaluation of single result
 """
 eval_distance_result = []
 eval_soundex_result = []
@@ -185,3 +186,54 @@ for c in soundex_new_data:
         single_eval['mra'] = 0
         single_eval['mra total'] = len(c['same phonetic representation']['mra'])
     eval_soundex_new_data.append(single_eval)
+
+print("----------Single Result Evaluation Sample----------")
+print(eval_distance_result[99])
+print(eval_distacne_new_data[99])
+print(eval_soundex_result[99])
+print(eval_soundex_new_data[99])
+"""
+{'misspell': 'usa', 'target': 'use', 'original spelling status': 'misspell', 'OOV/IV': 'IV', 'Minimum Levenshtein 
+Distance': 0, '3-Gram with Jaccard Best Match': 0, '2-Gram with Jaccard Best Match': 0, 'Edit Distance No More Than 
+2': 1, 'Edit Distance No More Than 2 Total': 561, 'Edit Distance No More Than 1': 1, 'Edit Distance No More Than 1 
+Total': 20, '3-Gram Jaccard Distance No More Than 0.2': 0, '3-Gram Jaccard Distance No More Than 0.2 Total': 1, 
+'2-Gram Jaccard Distance No More Than 0.2': 0, '2-Gram Jaccard Distance No More Than 0.2 Total': 1}
+{'misspell': 'in', 'target': 'in', 'original spelling status': 'correct', 'OOV/IV': 'IV', 'Minimum Levenshtein 
+Distance': 1, '3-Gram with Jaccard Best Match': 1, '2-Gram with Jaccard Best Match': 1, 'Edit Distance No More Than 
+2': 1, 'Edit Distance No More Than 2 Total': 2137, 'Edit Distance No More Than 1': 1, 'Edit Distance No More Than 1 
+Total': 89, '3-Gram Jaccard Distance No More Than 0.2': 1, '3-Gram Jaccard Distance No More Than 0.2 Total': 1, 
+'2-Gram Jaccard Distance No More Than 0.2': 1, '2-Gram Jaccard Distance No More Than 0.2 Total': 1}
+{'misspell': 'c', 'target': 'see', 'original spelling status': 'misspell', 'OOV/IV': 'IV', 'metaphone total': 82, 
+'metaphone': 0, 'refined_soundex': 0, 'refined_soundex total': 14, 'mra': 0, 'mra total': 37}
+{'misspell': 'c', 'target': 'see', 'original spelling status': 'misspell', 'OOV/IV': 'IV', 'metaphone total': 206, 
+'metaphone': 0, 'refined_soundex': 0, 'refined_soundex total': 39, 'mra': 0, 'mra total': 112}
+"""
+
+'''
+Statistics of the Results
+'''
+original_dict = {}
+updated_dict = {}
+# Average precision = corrected ones in the returned words / total number of returned words on the entire dataset
+# Recall is calculated based on the correct words (treat correct words as 'relevant')
+# Statistics for original_dict
+mld_status_corrected = sum([c['Minimum Levenshtein Distance'] for c in eval_distance_result])
+mld_avg_pre = mld_status_corrected / len(eval_distance_result)
+original_dict['Average Precision for Minimum Levenshtein Distance'] = mld_avg_pre
+# print(mld_avg_pre)
+all_correct = sum([c['original spelling status'] == 'correct' for c in eval_distance_result])
+mld_correct_still_correct = sum([c['original spelling status'] == 'correct' and c['Minimum Levenshtein Distance'] ==
+                                 1 for c in eval_distance_result])
+mld_recall_for_corrected_ones = mld_correct_still_correct / all_correct
+# print(mld_recall_for_corrected_ones)
+original_dict['Recall (Based on Corrected Spellings) for Minimum Levenshtein Distance'] = mld_recall_for_corrected_ones
+edit_less_than_2_pre = sum([c['Edit Distance No More Than 2'] for c in eval_distance_result]) / sum(
+    [c['Edit Distance No '
+       'More Than 2 Total']
+     for c in eval_distance_result])
+
+# print(edit_less_than_2_pre)
+original_dict['Average Precision for Edit Distance No More Than 2'] = edit_less_than_2_pre
+edit_less_than_2_recall = sum([c['original spelling status'] == 'correct' and c['Edit Distance No More Than 2'] == 1
+                               for c in eval_distance_result]) / all_correct
+# print(edit_less_than_2_recall)
