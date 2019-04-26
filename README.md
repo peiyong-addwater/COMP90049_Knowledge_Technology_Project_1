@@ -13,9 +13,9 @@ COMP90049_Knowledge_Technology_Project_1
 │   │   0DataPreprocess.py
 │   │   1ApproxMatchingIVPartStringDistanceApproach.py
 |		|		2ApproxMatchingIVPartPhonetics.py	
-│   │		3DealingWithOOVsExpandDictionary.py
-|		|		4ApproxMatchingEditDistanceOnNewDataEntry.py
-| 	|		5ApproxMatchingNewDataPhonetics.py
+│   │   3DealingWithOOVsExpandDictionary.py
+|   |   4ApproxMatchingEditDistanceOnNewDataEntry.py
+|   |   5ApproxMatchingNewDataPhonetics.py
 |		|
 │   └───utilsKTP1
 │       │   __init__.py
