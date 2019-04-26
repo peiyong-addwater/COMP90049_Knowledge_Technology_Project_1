@@ -21,29 +21,29 @@ COMP90049_Knowledge_Technology_Project_1
 │       │   __init__.py
 │       │   calculateStringDistance.py
 │       │   exceptions.py
-|				|		generatePhoneticRepresentations.py
-|				|		phonetics.py
+|       |   generatePhoneticRepresentations.py
+|       |   phonetics.py
 │   
 └───Code_Output
 │   data_entries.json
 │   dict.json
-|		distance_matching_result.json.zip
-|		new_data_entries.json
-|		distance_matching_new_data_result.json
-|		distance_matching_result.json
-|		new_dict.json
-|		soundex_matching_result.json
-|		result_evaluation.json
-|		soundex_matching_result.json.zip
-|		distance_matching_new_data_result.json.zip
-|		soundex_matching_new_data_result.json.zip
-|		soundex_matching_new_data_result.json
+|   distance_matching_result.json.zip
+|   new_data_entries.json
+|   distance_matching_new_data_result.json
+|   distance_matching_result.json
+|   new_dict.json
+|   soundex_matching_result.json
+|   result_evaluation.json
+|   soundex_matching_result.json.zip
+|   distance_matching_new_data_result.json.zip
+|   soundex_matching_new_data_result.json.zip
+|   soundex_matching_new_data_result.json
 |
 └───Data
 │   google-10000-english-usa.txt
 │   google-10000-english.txt
-|		words.txt
-|		dict.txt
-|		correct.txt
-|		misspell.txt
+|   words.txt
+|   dict.txt
+|   correct.txt
+|   misspell.txt
 ```
