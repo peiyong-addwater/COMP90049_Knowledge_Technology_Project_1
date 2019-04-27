@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/6EvalResults.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/6EvalResults.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_Output/distance_matching_result.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Output/distance_matching_result.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_Output/result_evaluation.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Output/result_evaluation.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,9 +36,7 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Code_Output/result_evaluation.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-541" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -304,14 +299,7 @@
       <workItem from="1556299617586" duration="32000" />
       <workItem from="1556313127507" duration="1313000" />
       <workItem from="1556370112284" duration="2405000" />
-      <workItem from="1556383039882" duration="615000" />
-    </task>
-    <task id="LOCAL-00053" summary="updates">
-      <created>1555163975278</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1555163975278</updated>
+      <workItem from="1556383039882" duration="644000" />
     </task>
     <task id="LOCAL-00054" summary="updates">
       <created>1555173236470</created>
@@ -649,11 +637,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556378292869</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Really Final....">
+      <created>1556387164312</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1556387164314</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78981000" />
+    <option name="totallyTimeSpent" value="79010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -696,7 +691,8 @@
     <MESSAGE value="Finishing Coding" />
     <MESSAGE value="Clean up codes" />
     <MESSAGE value="Finally final (&quot;Yes, minister&quot;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally final (&quot;Yes, minister&quot;)" />
+    <MESSAGE value="Really Final...." />
+    <option name="LAST_COMMIT_MESSAGE" value="Really Final...." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COMP90049_Knowledge_Technology_Project_1$6EvalResults.coverage" NAME="6EvalResults Coverage Results" MODIFIED="1556387121960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Code" />
@@ -864,9 +860,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code_Output/result_evaluation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-541" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
