@@ -1,146 +1,146 @@
 {
     "With Original Dictionary": {
         "Minimum Levenshtein Distance": {
-            "Precision for Minimum Levenshtein Distance on Entire Dataset": 0.7617709746173222,
-            "Precision for Minimum Levenshtein Distance on the Misspellings which are IV": 0.07983761840324763,
-            "Accuracy for Minimum Levenshtein Distance on the Misspellings which are IV": 0.07983761840324763,
-            "Recall for Minimum Levenshtein Distance on Entire Dataset": 0.8323378839590444,
-            "Recall for Minimum Levenshtein Distance on Entire Dataset, IV": 1.0
+            "Precision for Minimum Levenshtein Distance on Entire Dataset": 76.17709746173222,
+            "Precision for Minimum Levenshtein Distance on the Misspellings which are IV": 7.983761840324763,
+            "Accuracy for Minimum Levenshtein Distance on the Misspellings which are IV": 7.983761840324763,
+            "Recall for Minimum Levenshtein Distance on Entire Dataset": 83.23378839590444,
+            "Recall for Minimum Levenshtein Distance on Entire Dataset, IV": 100.0
         },
         "Edit Distance No More Than 2": {
-            "Precision for Edit Distance No More Than 2 on Entire Dataset": 0.0016038868821941156,
-            "Precision for Edit Distance No More Than 2 on the Misspellings which are IV": 0.0015937397229085328,
-            "Accuracy for Edit Distance No More Than 2 on the Misspellings which are IV": 0.7672530446549392,
-            "Recall for Edit Distance No More Than 2 on Entire Dataset": 0.8323378839590444,
-            "Recall for Edit Distance No More Than 2 on Entire Dataset, IV": 1.0
+            "Precision for Edit Distance No More Than 2 on Entire Dataset": 0.16038868821941157,
+            "Precision for Edit Distance No More Than 2 on the Misspellings which are IV": 0.1593739722908533,
+            "Accuracy for Edit Distance No More Than 2 on the Misspellings which are IV": 76.72530446549392,
+            "Recall for Edit Distance No More Than 2 on Entire Dataset": 83.23378839590444,
+            "Recall for Edit Distance No More Than 2 on Entire Dataset, IV": 100.0
         },
         "Edit Distance No More Than 1": {
-            "Precision for Edit Distance No More Than 1 on Entire Dataset": 0.02685868430792623,
-            "Precision for Edit Distance No More Than 1 on the Misspellings which are IV": 0.011730616441557228,
-            "Accuracy for Edit Distance No More Than 1 on the Misspellings which are IV": 0.33964817320703655,
-            "Recall for Edit Distance No More Than 1 on Entire Dataset": 0.8323378839590444,
-            "Recall for Edit Distance No More Than 1 on Entire Dataset, IV": 1.0
+            "Precision for Edit Distance No More Than 1 on Entire Dataset": 2.685868430792623,
+            "Precision for Edit Distance No More Than 1 on the Misspellings which are IV": 1.1730616441557227,
+            "Accuracy for Edit Distance No More Than 1 on the Misspellings which are IV": 33.96481732070365,
+            "Recall for Edit Distance No More Than 1 on Entire Dataset": 83.23378839590444,
+            "Recall for Edit Distance No More Than 1 on Entire Dataset, IV": 100.0
         },
         "3-Gram with Jaccard Best Match": {
-            "Precision for 3-Gram with Jaccard Best Match on Entire Dataset": 0.7658399534973842,
-            "Precision for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 0.13667117726657646,
-            "Accuracy for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 0.13667117726657646,
-            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset": 0.8323378839590444,
-            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset, IV": 1.0
+            "Precision for 3-Gram with Jaccard Best Match on Entire Dataset": 76.58399534973842,
+            "Precision for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 13.667117726657645,
+            "Accuracy for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 13.667117726657645,
+            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset": 83.23378839590444,
+            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset, IV": 100.0
         },
         "2-Gram with Jaccard Best Match": {
-            "Precision for 2-Gram with Jaccard Best Match on Entire Dataset": 0.7648711490021314,
-            "Precision for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 0.12449255751014884,
-            "Accuracy for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 0.12449255751014884,
-            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset": 0.832231228668942,
-            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset, IV": 0.9998718605843158
+            "Precision for 2-Gram with Jaccard Best Match on Entire Dataset": 76.48711490021314,
+            "Precision for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 12.449255751014885,
+            "Accuracy for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 12.449255751014885,
+            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset": 83.2231228668942,
+            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset, IV": 99.98718605843158
         },
         "2-Gram Jaccard Distance No More Than 0.2": {
-            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.7736296296296297,
-            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.05811623246492986,
-            "Accuracy for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.03924221921515562,
-            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.8323378839590444,
-            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 1.0
+            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 77.36296296296297,
+            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 5.811623246492986,
+            "Accuracy for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 3.924221921515562,
+            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 83.23378839590444,
+            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 100.0
         },
         "3-Gram Jaccard Distance No More Than 0.2": {
-            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.9221500295333727,
-            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.005115089514066497,
-            "Accuracy for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.0027063599458728013,
-            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.8323378839590444,
-            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 1.0
+            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 92.21500295333726,
+            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.5115089514066496,
+            "Accuracy for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.2706359945872801,
+            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 83.23378839590444,
+            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 100.0
         },
         "metaphone": {
-            "Precision for metaphone on Entire Dataset": 0.01847370472984975,
-            "Precision for metaphone on the Misspellings which are IV": 0.006670590543456935,
-            "Accuracy for metaphone on the Misspellings which are IV": 0.27604871447902574,
-            "Recall for metaphone on Entire Dataset": 0.8323378839590444,
-            "Recall for metaphone on Entire Dataset, IV": 1.0
+            "Precision for metaphone on Entire Dataset": 1.8473704729849751,
+            "Precision for metaphone on the Misspellings which are IV": 0.6670590543456936,
+            "Accuracy for metaphone on the Misspellings which are IV": 27.604871447902575,
+            "Recall for metaphone on Entire Dataset": 83.23378839590444,
+            "Recall for metaphone on Entire Dataset, IV": 100.0
         },
         "refined_soundex": {
-            "Precision for refined_soundex on Entire Dataset": 0.02652310399296183,
-            "Precision for refined_soundex on the Misspellings which are IV": 0.009792772302249179,
-            "Accuracy for refined_soundex on the Misspellings which are IV": 0.20974289580514208,
-            "Recall for refined_soundex on Entire Dataset": 0.8323378839590444,
-            "Recall for refined_soundex on Entire Dataset, IV": 1.0
+            "Precision for refined_soundex on Entire Dataset": 2.652310399296183,
+            "Precision for refined_soundex on the Misspellings which are IV": 0.9792772302249179,
+            "Accuracy for refined_soundex on the Misspellings which are IV": 20.974289580514206,
+            "Recall for refined_soundex on Entire Dataset": 83.23378839590444,
+            "Recall for refined_soundex on Entire Dataset, IV": 100.0
         },
         "mra": {
-            "Precision for mra on Entire Dataset": 0.034102705404400926,
-            "Precision for mra on the Misspellings which are IV": 0.010330697754948924,
-            "Accuracy for mra on the Misspellings which are IV": 0.2422192151556157,
-            "Recall for mra on Entire Dataset": 0.8323378839590444,
-            "Recall for mra on Entire Dataset, IV": 1.0
+            "Precision for mra on Entire Dataset": 3.410270540440093,
+            "Precision for mra on the Misspellings which are IV": 1.0330697754948925,
+            "Accuracy for mra on the Misspellings which are IV": 24.22192151556157,
+            "Recall for mra on Entire Dataset": 83.23378839590444,
+            "Recall for mra on Entire Dataset, IV": 100.0
         }
     },
     "With Updated Dictionary": {
         "Minimum Levenshtein Distance": {
-            "Precision for Minimum Levenshtein Distance on Entire Dataset": 0.7795000968804495,
-            "Precision for Minimum Levenshtein Distance on the Misspellings which are IV": 0.07962529274004684,
-            "Accuracy for Minimum Levenshtein Distance on the Misspellings which are IV": 0.07962529274004684,
-            "Recall for Minimum Levenshtein Distance on Entire Dataset": 0.85089590443686,
-            "Recall for Minimum Levenshtein Distance on Entire Dataset, IV": 1.0
+            "Precision for Minimum Levenshtein Distance on Entire Dataset": 77.95000968804496,
+            "Precision for Minimum Levenshtein Distance on the Misspellings which are IV": 7.962529274004685,
+            "Accuracy for Minimum Levenshtein Distance on the Misspellings which are IV": 7.962529274004685,
+            "Recall for Minimum Levenshtein Distance on Entire Dataset": 85.089590443686,
+            "Recall for Minimum Levenshtein Distance on Entire Dataset, IV": 100.0
         },
         "Edit Distance No More Than 2": {
-            "Precision for Edit Distance No More Than 2 on Entire Dataset": 0.0010399472785460175,
-            "Precision for Edit Distance No More Than 2 on the Misspellings which are IV": 0.0009828935326194113,
-            "Accuracy for Edit Distance No More Than 2 on the Misspellings which are IV": 0.7822014051522248,
-            "Recall for Edit Distance No More Than 2 on Entire Dataset": 0.85089590443686,
-            "Recall for Edit Distance No More Than 2 on Entire Dataset, IV": 1.0
+            "Precision for Edit Distance No More Than 2 on Entire Dataset": 0.10399472785460175,
+            "Precision for Edit Distance No More Than 2 on the Misspellings which are IV": 0.09828935326194113,
+            "Accuracy for Edit Distance No More Than 2 on the Misspellings which are IV": 78.22014051522248,
+            "Recall for Edit Distance No More Than 2 on Entire Dataset": 85.089590443686,
+            "Recall for Edit Distance No More Than 2 on Entire Dataset, IV": 100.0
         },
         "Edit Distance No More Than 1": {
-            "Precision for Edit Distance No More Than 1 on Entire Dataset": 0.022568380402770472,
-            "Precision for Edit Distance No More Than 1 on the Misspellings which are IV": 0.010542445602206558,
-            "Accuracy for Edit Distance No More Than 1 on the Misspellings which are IV": 0.4028103044496487,
-            "Recall for Edit Distance No More Than 1 on Entire Dataset": 0.85089590443686,
-            "Recall for Edit Distance No More Than 1 on Entire Dataset, IV": 1.0
+            "Precision for Edit Distance No More Than 1 on Entire Dataset": 2.256838040277047,
+            "Precision for Edit Distance No More Than 1 on the Misspellings which are IV": 1.0542445602206558,
+            "Accuracy for Edit Distance No More Than 1 on the Misspellings which are IV": 40.28103044496487,
+            "Recall for Edit Distance No More Than 1 on Entire Dataset": 85.089590443686,
+            "Recall for Edit Distance No More Than 1 on Entire Dataset, IV": 100.0
         },
         "3-Gram with Jaccard Best Match": {
-            "Precision for 3-Gram with Jaccard Best Match on Entire Dataset": 0.7836659562100368,
-            "Precision for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 0.12997658079625293,
-            "Accuracy for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 0.12997658079625293,
-            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset": 0.85089590443686,
-            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset, IV": 1.0
+            "Precision for 3-Gram with Jaccard Best Match on Entire Dataset": 78.36659562100368,
+            "Precision for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 12.997658079625293,
+            "Accuracy for 3-Gram with Jaccard Best Match on the Misspellings which are IV": 12.997658079625293,
+            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset": 85.089590443686,
+            "Recall for 3-Gram with Jaccard Best Match on Entire Dataset, IV": 100.0
         },
         "2-Gram with Jaccard Best Match": {
-            "Precision for 2-Gram with Jaccard Best Match on Entire Dataset": 0.7824065103662081,
-            "Precision for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 0.12412177985948478,
-            "Accuracy for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 0.12412177985948478,
-            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset": 0.850042662116041,
-            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset, IV": 0.9989972424166458
+            "Precision for 2-Gram with Jaccard Best Match on Entire Dataset": 78.24065103662082,
+            "Precision for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 12.412177985948478,
+            "Accuracy for 2-Gram with Jaccard Best Match on the Misspellings which are IV": 12.412177985948478,
+            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset": 85.00426621160409,
+            "Recall for 2-Gram with Jaccard Best Match on Entire Dataset, IV": 99.89972424166457
         },
         "2-Gram Jaccard Distance No More Than 0.2": {
-            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.7716102919919052,
-            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.045454545454545456,
-            "Accuracy for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.03395784543325527,
-            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.85089590443686,
-            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 1.0
+            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 77.16102919919052,
+            "Precision for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 4.545454545454546,
+            "Accuracy for 2-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 3.395784543325527,
+            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 85.089590443686,
+            "Recall for 2-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 100.0
         },
         "3-Gram Jaccard Distance No More Than 0.2": {
-            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.9203090762311152,
-            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.0038095238095238095,
-            "Accuracy for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.00234192037470726,
-            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 0.85089590443686,
-            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 1.0
+            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 92.03090762311152,
+            "Precision for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.38095238095238093,
+            "Accuracy for 3-Gram Jaccard Distance No More Than 0.2 on the Misspellings which are IV": 0.234192037470726,
+            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset": 85.089590443686,
+            "Recall for 3-Gram Jaccard Distance No More Than 0.2 on Entire Dataset, IV": 100.0
         },
         "metaphone": {
-            "Precision for metaphone on Entire Dataset": 0.009984339944954726,
-            "Precision for metaphone on the Misspellings which are IV": 0.004213385815858408,
-            "Accuracy for metaphone on the Misspellings which are IV": 0.3559718969555035,
-            "Recall for metaphone on Entire Dataset": 0.85089590443686,
-            "Recall for metaphone on Entire Dataset, IV": 1.0
+            "Precision for metaphone on Entire Dataset": 0.9984339944954725,
+            "Precision for metaphone on the Misspellings which are IV": 0.42133858158584075,
+            "Accuracy for metaphone on the Misspellings which are IV": 35.597189695550355,
+            "Recall for metaphone on Entire Dataset": 85.089590443686,
+            "Recall for metaphone on Entire Dataset, IV": 100.0
         },
         "refined_soundex": {
-            "Precision for refined_soundex on Entire Dataset": 0.01468551191334709,
-            "Precision for refined_soundex on the Misspellings which are IV": 0.007390478451858007,
-            "Accuracy for refined_soundex on the Misspellings which are IV": 0.29156908665105385,
-            "Recall for refined_soundex on Entire Dataset": 0.85089590443686,
-            "Recall for refined_soundex on Entire Dataset, IV": 1.0
+            "Precision for refined_soundex on Entire Dataset": 1.4685511913347091,
+            "Precision for refined_soundex on the Misspellings which are IV": 0.7390478451858007,
+            "Accuracy for refined_soundex on the Misspellings which are IV": 29.156908665105384,
+            "Recall for refined_soundex on Entire Dataset": 85.089590443686,
+            "Recall for refined_soundex on Entire Dataset, IV": 100.0
         },
         "mra": {
-            "Precision for mra on Entire Dataset": 0.01864338652057863,
-            "Precision for mra on the Misspellings which are IV": 0.0073209912306112235,
-            "Accuracy for mra on the Misspellings which are IV": 0.3255269320843091,
-            "Recall for mra on Entire Dataset": 0.85089590443686,
-            "Recall for mra on Entire Dataset, IV": 1.0
+            "Precision for mra on Entire Dataset": 1.864338652057863,
+            "Precision for mra on the Misspellings which are IV": 0.7320991230611223,
+            "Accuracy for mra on the Misspellings which are IV": 32.55269320843091,
+            "Recall for mra on Entire Dataset": 85.089590443686,
+            "Recall for mra on Entire Dataset, IV": 100.0
         }
     }
 }

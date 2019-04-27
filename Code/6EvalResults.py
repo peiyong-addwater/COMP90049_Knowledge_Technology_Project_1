@@ -715,6 +715,13 @@ updated_dict['mra']['Recall for mra on Entire Dataset, IV'] = len([c for c in ev
 print(original_dict, '\n')
 print("Number of Words Need to Be Corrected, IV (updated dictionary): ", ALL_IV_NEED_CORRECTION)
 print(updated_dict, '\n')
+for key1 in original_dict.keys():
+    for key2 in original_dict[key1].keys():
+        original_dict[key1][key2] = original_dict[key1][key2] * 100
+for key1 in updated_dict.keys():
+    for key2 in updated_dict[key1].keys():
+        updated_dict[key1][key2] = updated_dict[key1][key2] * 100
+
 result_evaluation = {'With Original Dictionary': original_dict, 'With Updated Dictionary': updated_dict}
 with open(OUTPUT_DIR + 'result_evaluation.json', 'w') as fp:
     json.dump(result_evaluation, fp, indent=4)
