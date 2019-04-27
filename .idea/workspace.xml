@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7978200b-23a4-40af-bf7d-0ced16158eea" name="Default Changelist" comment="updates">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/6EvalResults.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/6EvalResults.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_Output/distance_matching_result.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Output/distance_matching_result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_Output/result_evaluation.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Output/result_evaluation.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,53 +26,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1444">
-              <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Code/3DealingWithOOVsExpandDictionary.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+            <state relative-caret-position="710">
+              <caret line="715" column="67" selection-start-line="715" selection-start-column="67" selection-end-line="715" selection-end-column="67" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1558">
-              <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Report/report-template.tex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -108,11 +72,11 @@
         <option value="$PROJECT_DIR$/Code/0DataPreprocess.py" />
         <option value="$PROJECT_DIR$/Code/3DealingWithOOVsExpandDictionary.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Code/6EvalResults.py" />
         <option value="$PROJECT_DIR$/Code/5ApproxMatchingNewDataPhonetics.py" />
         <option value="$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py" />
         <option value="$PROJECT_DIR$/Code/1ApproxMatchingIVPartStringDistanceApproach.py" />
         <option value="$PROJECT_DIR$/Code/2ApproxMatchingIVPartPhonetics.py" />
+        <option value="$PROJECT_DIR$/Code/6EvalResults.py" />
       </list>
     </option>
   </component>
@@ -145,11 +109,6 @@
               <item name="COMP90049_Knowledge_Technology_Project_1" type="b2602c69:ProjectViewProjectNode" />
               <item name="COMP90049_Knowledge_Technology_Project_1" type="462c0819:PsiDirectoryNode" />
               <item name="Code_Output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COMP90049_Knowledge_Technology_Project_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP90049_Knowledge_Technology_Project_1" type="462c0819:PsiDirectoryNode" />
-              <item name="Report" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,6 +296,8 @@
       <workItem from="1555853198467" duration="120000" />
       <workItem from="1556059459952" duration="23673000" />
       <workItem from="1556299617586" duration="32000" />
+      <workItem from="1556313127507" duration="1313000" />
+      <workItem from="1556370112284" duration="2264000" />
     </task>
     <task id="LOCAL-00052" summary="updates">
       <created>1555163946294</created>
@@ -685,13 +646,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74648000" />
+    <option name="totallyTimeSpent" value="78225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25946277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26251528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -730,7 +690,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Clean up codes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/COMP90049_Knowledge_Technology_Project_1$6EvalResults.coverage" NAME="6EvalResults Coverage Results" MODIFIED="1556298941401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Code" />
+    <SUITE FILE_PATH="coverage/COMP90049_Knowledge_Technology_Project_1$6EvalResults.coverage" NAME="6EvalResults Coverage Results" MODIFIED="1556378207009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Code_Output/dict.json">
@@ -764,13 +724,7 @@
         <state relative-caret-position="-1648" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/utilsKTP1/__DraftCode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/utilsKTP1/__DraftCode.py" />
     <entry file="file://$PROJECT_DIR$/Data/google-10000-english.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -788,10 +742,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code_Output/distance_matching_result.json">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="-727446" />
       </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Code_Output/soundex_matching_new_data_result.json">
       <provider selected="true" editor-type-id="text-editor" />
@@ -827,16 +781,6 @@
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#109#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6916">
-          <caret line="639" column="46" selection-start-line="639" selection-start-column="46" selection-end-line="639" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -888,24 +832,28 @@
     <entry file="file://$PROJECT_DIR$/Code/3DealingWithOOVsExpandDictionary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
-          <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Report/report-template.tex" />
     <entry file="file://$PROJECT_DIR$/Code/4ApproxMatchingEditDistanceOnNewDataEntry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1558">
+        <state relative-caret-position="895">
           <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Report/report-template.tex">
+    <entry file="file://$PROJECT_DIR$/Code/6EvalResults.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="710">
+          <caret line="715" column="67" selection-start-line="715" selection-start-column="67" selection-end-line="715" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
